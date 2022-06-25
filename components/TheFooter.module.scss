@@ -1,0 +1,28 @@
+.footer {
+    background-color: var(--color-dark-blue);
+    color: #fff;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 24px;
+
+    .logo {
+        flex-basis: 200px;
+        text-align: center;
+    }
+
+    .info {
+        // font-size: 1.25rem;
+    }
+
+    .certification-slogan {
+        text-align: right;
+
+        h2 {
+            border-bottom: 6px solid red;
+            font-weight: normal;
+            font-size: 1.5rem;
+            padding-left: 45px;
+            padding-bottom: 6px;
+        }
+    }
+}
