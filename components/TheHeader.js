@@ -55,7 +55,17 @@ export default function Header() {
           </div>
 
           <div className={`${getClassName("/contact")}`}>
-            <a href="/contact">聯絡我們</a>
+            <a href="/contact">
+              <button
+                style={{
+                  border: `1px solid #0D6EFD`,
+                  padding: "8px 12px",
+                  borderRadius: "4px",
+                }}
+              >
+                聯絡我們
+              </button>
+            </a>
           </div>
         </div>
       </div>
