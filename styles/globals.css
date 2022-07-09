@@ -1,5 +1,33 @@
 :root {
-    --color-dark-blue: #062959;
+    --white-color: #fff;
+    --global-pc-width: 1200px;
+    --text-blue-color-1: #062959;
+    --text-blue-color-2: #343F52;
+    --title-color: #062959;
+    --global-bgcolor: #F2F8FB;
+    
+
+    /* z-index */
+    --header-z-index: 11;
+    
+    /* swiper */
+    --swiper-theme-color: #0D6EFD !important;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    background-color: var(--global-bgcolor);
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
 }
 
 .container {

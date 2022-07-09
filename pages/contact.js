@@ -3,7 +3,7 @@ import styles from "../styles/Home.module.css";
 import Header from "../components/TheHeader";
 import Footer from "../components/TheFooter";
 
-export default function About() {
+export default function Contact() {
   return (
     <div className={`${styles.container} container`}>
       <Head>
