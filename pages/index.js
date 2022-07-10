@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import Head from "next/head";
-import styles from "../styles/Home.module.css";
+import styles from "./index.module.scss";
 
 import Header from "../components/TheHeader";
 import Footer from "../components/TheFooter";
@@ -45,13 +45,13 @@ export default function Home() {
     },
   ]);
 
-  const [width, setWidth] = useState();
+  // const [width, setWidth] = useState();
   const [height, setHeight] = useState();
 
   // This function calculates width and height of the list
   const getListSize = () => {
-    const newWidth = swiperSlides.current.clientWidth;
-    setWidth(newWidth);
+    // const newWidth = swiperSlides.current.clientWidth;
+    // setWidth(newWidth);
 
     const newHeight = swiperSlides.current.clientHeight;
     setHeight(newHeight);
@@ -88,12 +88,12 @@ export default function Home() {
         </div>
       </div>
 
-      <main className={`${styles.main} main`}>
+      <main>
         <div className={styles.title} style={{ marginTop: 33 + "px" }}>
           竑澤優勢
         </div>
         <div className={styles.section}>
-          <div className={styles.content}>
+          <div className={`${styles.content} ${styles.advantage}`}>
             <div>
               <img src="/機動性高.png" alt="機動性高 icon" />
               <span>機動性高</span>
@@ -162,9 +162,6 @@ export default function Home() {
               top: `${height / 2}px`,
             }}
           ></div>
-
-          {/* {width && <h3>Width: {width}px</h3>}
-          {height && <h3>Height: {height}px</h3>} */}
 
           <div>
             <a href="/about">

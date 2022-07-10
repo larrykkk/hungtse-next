@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.logo}>
-        <img src="/竑澤Logo-27.png" alt="logo" width={161} />
+        <img src="/竑澤單Logo-27.png" alt="logo" width={161} />
         <br />
         <h1>竑澤實業股份有限公司</h1>
       </div>
@@ -21,9 +21,19 @@ export default function Footer() {
         </div>
       </div>
       <div className={styles["certification-slogan"]}>
-        <img src="/GRS-Logo-白字.png" alt="GRS-Logo" width={221} />
-        <img src="/GRS-Logo-白字.png" alt="GRS-Logo" width={221} />
-        <h2>技術傳承、品質保證、永續經營</h2>
+        <img
+          src="/GRS-Logo-白字.png"
+          alt="GRS-Logo"
+          width={221}
+          className={styles.img1}
+        />
+        <img
+          src="/iso9001.png"
+          alt="GRS-Logo"
+          width={105}
+          className={styles.img2}
+        />
+        <h2 className={styles.slogen}>技術傳承、品質保證、永續經營</h2>
       </div>
     </footer>
   );

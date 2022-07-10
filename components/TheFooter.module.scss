@@ -1,7 +1,7 @@
 .footer {
     @media screen and (max-width: 767px) {
         flex-direction: column;
-        ;
+        padding: var(--mobile-padding);
     }
 
     background-color: var(--text-blue-color-1);
@@ -29,21 +29,23 @@
         display: flex;
         flex-direction: column;
         align-items: left;
-        font-size: 1.125em;
+        font-size: 1.25rem;
 
         div+div {
             margin-top: 30px;
             margin-left: 0px;
         }
 
-        @media screen and (min-width: 767px) {
+        @media screen and (min-width: 768px) {
             flex-direction: row;
             align-items: center;
 
             div+div {
                 margin-left: 38px;
+                margin-top: 0px;
             }
         }
+
         padding-bottom: 10px;
         border-bottom: 6px solid #E41D25;
     }
@@ -52,15 +54,37 @@
         margin-top: 40px;
         text-align: center;
 
-        h2 {
-            margin-top: 20px;
-            font-weight: normal;
-            font-size: 1.5rem;
-        }
 
-        @media screen and (min-width: 767px) {
+        @media screen and (min-width: 768px) {
             margin-top: 0px;
             text-align: right;
         }
+    }
+}
+
+.slogen {
+    font-size: 2rem;
+    margin-top: 20px;
+    font-weight: normal;
+
+    @media screen and (max-width: 767px) {
+        font-size: 1.25rem;
+    }
+}
+
+.img1 {
+    width: 220px;
+
+    @media screen and (max-width: 767px) {
+        width: 160px;
+    }
+}
+
+
+.img2 {
+    width: 105px;
+
+    @media screen and (max-width: 767px) {
+        width: 80px;
     }
 }
