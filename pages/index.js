@@ -14,7 +14,10 @@ import "swiper/css/pagination";
 // import required modules
 import { Navigation, Pagination } from "swiper";
 
+import { useWindowSize } from "../hooks/useWindowDimensions.js";
+
 export default function Home() {
+  const size = useWindowSize();
   const swiperSlides = useRef();
 
   const [slides, setSlides] = useState([
@@ -45,6 +48,43 @@ export default function Home() {
     },
   ]);
 
+  const [equipment, setEquipment] = useState([
+    {
+      id: 1,
+      name: "落布機",
+    },
+    {
+      id: 2,
+      name: "高溫染色機",
+    },
+    {
+      id: 3,
+      name: "落布機",
+    },
+    {
+      id: 4,
+      name: "落布機",
+    },
+    {
+      id: 5,
+      name: "落布機",
+    },
+    {
+      id: 6,
+      name: "落布機",
+    },
+    {
+      id: 7,
+      name: "落布機",
+    },
+    {
+      id: 8,
+      name: "落布機",
+    },
+  ]);
+
+  // 落布機-1.jpg
+
   // const [width, setWidth] = useState();
   const [height, setHeight] = useState();
 
@@ -52,9 +92,10 @@ export default function Home() {
   const getListSize = () => {
     // const newWidth = swiperSlides.current.clientWidth;
     // setWidth(newWidth);
-
-    const newHeight = swiperSlides.current.clientHeight;
-    setHeight(newHeight);
+    if (swiperSlides.current) {
+      const newHeight = swiperSlides.current.clientHeight;
+      setHeight(newHeight);
+    }
   };
 
   // Get 'width' and 'height' after the initial render and every time the list changes
@@ -121,47 +162,66 @@ export default function Home() {
         </div>
 
         <div className={styles.title}>產品項目</div>
-        <div className={styles.section}>
-          <Swiper
-            slidesPerView={3}
-            spaceBetween={25}
-            slidesPerGroup={3}
-            pagination={{
-              clickable: true,
-            }}
-            navigation={{
-              nextEl: ".swiper-button-next",
-              prevEl: ".swiper-button-prev",
-            }}
-            loop={true}
-            modules={[Pagination, Navigation]}
-            className="mySwiper"
-            key={1}
-            style={{ marginBottom: "70px" }}
-          >
-            {slides.map((item) => {
-              return (
-                <SwiperSlide key={item.id} data-id={item.id}>
-                  <div ref={swiperSlides}>
-                    <img src={item.img} alt={item.title} />
+        <div className={`${styles.section}`}>
+          {size.width > 767 ? (
+            <>
+              <Swiper
+                slidesPerView={3}
+                spaceBetween={25}
+                slidesPerGroup={3}
+                pagination={{
+                  clickable: true,
+                }}
+                navigation={{
+                  nextEl: ".swiper-button-next",
+                  prevEl: ".swiper-button-prev",
+                }}
+                loop={true}
+                modules={[Pagination, Navigation]}
+                className="mySwiper"
+                key={1}
+                style={{ marginBottom: "70px" }}
+              >
+                {slides.map((item) => {
+                  return (
+                    <SwiperSlide key={item.id} data-id={item.id}>
+                      <div ref={swiperSlides}>
+                        <img src={item.img} alt={item.title} />
+                      </div>
+                      <span className={styles.swiperDesc}>{item.title}</span>
+                    </SwiperSlide>
+                  );
+                })}
+              </Swiper>
+              <div
+                className="swiper-button-prev"
+                style={{
+                  top: `${height / 2}px`,
+                }}
+              ></div>
+              <div
+                className="swiper-button-next"
+                style={{
+                  top: `${height / 2}px`,
+                }}
+              ></div>
+            </>
+          ) : (
+            <div className={styles.products}>
+              {slides.map((item) => {
+                return (
+                  <div className={styles["mobile-products"]} key={item.id}>
+                    <div style={{ marginBottom: "12px" }}>
+                      <img src={item.img} alt={item.title} />
+                    </div>
+                    <span className={styles["mobile-products-desc"]}>
+                      {item.title}
+                    </span>
                   </div>
-                  <span className={styles.swiperDesc}>{item.title}</span>
-                </SwiperSlide>
-              );
-            })}
-          </Swiper>
-          <div
-            className="swiper-button-prev"
-            style={{
-              top: `${height / 2}px`,
-            }}
-          ></div>
-          <div
-            className="swiper-button-next"
-            style={{
-              top: `${height / 2}px`,
-            }}
-          ></div>
+                );
+              })}
+            </div>
+          )}
 
           <div>
             <a href="/about">
@@ -172,46 +232,66 @@ export default function Home() {
 
         <div className={styles.title}>設備介紹</div>
         <div className={styles.section}>
-          <Swiper
-            slidesPerView={3}
-            spaceBetween={25}
-            slidesPerGroup={3}
-            pagination={{
-              clickable: true,
-            }}
-            navigation={{
-              nextEl: ".swiper-button-next",
-              prevEl: ".swiper-button-prev",
-            }}
-            // loop={true}
-            modules={[Pagination, Navigation]}
-            className="mySwiper"
-            key={1}
-            style={{ marginBottom: "70px" }}
-          >
-            {slides.map((item) => {
-              return (
-                <SwiperSlide key={item.id} data-id={item.id}>
-                  <div ref={swiperSlides}>
-                    <img src={item.img} alt={item.title} />
+          {size.width > 767 ? (
+            <>
+              <Swiper
+                slidesPerView={3}
+                spaceBetween={25}
+                slidesPerGroup={3}
+                pagination={{
+                  clickable: true,
+                }}
+                navigation={{
+                  nextEl: ".swiper-button-next",
+                  prevEl: ".swiper-button-prev",
+                }}
+                // loop={true}
+                modules={[Pagination, Navigation]}
+                className="mySwiper"
+                key={1}
+                style={{ marginBottom: "70px" }}
+              >
+                {slides.map((item) => {
+                  return (
+                    <SwiperSlide key={item.id} data-id={item.id}>
+                      <div ref={swiperSlides}>
+                        <img src={item.img} alt={item.title} />
+                      </div>
+                      <span className={styles.swiperDesc}>{item.title}</span>
+                    </SwiperSlide>
+                  );
+                })}
+              </Swiper>
+              <div
+                className="swiper-but【ton-prev"
+                style={{
+                  top: `${height / 2}px`,
+                }}
+              ></div>
+              <div
+                className="swiper-button-next"
+                style={{
+                  top: `${height / 2}px`,
+                }}
+              ></div>
+            </>
+          ) : (
+            <div className={styles.equipment}>
+              {equipment.map((item) => {
+                return (
+                  <div className={styles["mobile-equipment"]} key={item.id}>
+                    <div style={{ marginBottom: "12px" }}>
+                      <img src={`/${item.name}-1.jpg`} alt={item.name} />
+                    </div>
+                    <span className={styles["mobile-equipment-desc"]}>
+                      {item.name}
+                    </span>
                   </div>
-                  <span className={styles.swiperDesc}>{item.title}</span>
-                </SwiperSlide>
-              );
-            })}
-          </Swiper>
-          <div
-            className="swiper-button-prev"
-            style={{
-              top: `${height / 2}px`,
-            }}
-          ></div>
-          <div
-            className="swiper-button-next"
-            style={{
-              top: `${height / 2}px`,
-            }}
-          ></div>
+                );
+              })}
+            </div>
+          )}
+
           <a href="/factory_intro">
             <button className={styles.button}>了解更多</button>
           </a>

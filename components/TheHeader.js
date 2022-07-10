@@ -42,7 +42,7 @@ export default function Header() {
       if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
         toggleSubMenu("");
       }
-    }
+    } 
     // Bind the event listener
     document.addEventListener("mousedown", handleClickOutside);
     return () => {

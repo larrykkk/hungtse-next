@@ -15,10 +15,6 @@
 
 .desc {
   @media screen and (max-width: 767px) {
-    // padding: var(--mobile-padding);
-    // transform: translateY(-50%);
-    // position: absolute;
-    // top: 50%;
     margin-top: 0px;
     display: flex;
     flex-direction: column;
@@ -76,6 +72,10 @@
 }
 
 .content {
+  @media screen and (max-width: 767px) {
+    margin-bottom: 40px;
+  }
+
   display: flex;
   margin-bottom: 70px;
 }
@@ -83,6 +83,8 @@
 .content div {
   @media screen and (max-width: 767px) {
     margin: 10px 8px;
+    font-size: 1.25rem;
+
   }
 
   display: flex;
@@ -96,7 +98,7 @@
 
 .content img {
   @media screen and (max-width: 767px) {
-    max-width: 170px;
+    max-width: 100px;
   }
 
   width: 100%;
@@ -111,6 +113,10 @@
 }
 
 .button {
+  @media screen and (max-width: 767px) {
+    font-size: 1.25rem;
+  }
+
   background-color: #315084;
   color: var(--white-color);
   font-size: 1.5rem;
@@ -124,4 +130,62 @@
   color: var(--text-blue-color-2);
   font-size: 2rem;
   font-weight: 700;
+}
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin-bottom: 40px;
+}
+
+.mobile-products {
+  // display: flex;
+  // fwwrap: wrap;
+  // max-width: 200px;
+  max-width: calc(50% - 8px * 2);
+  text-align: center;
+  margin: 8px;
+}
+
+.mobile-products img {
+  width: 100%;
+  border-radius: 20px;
+}
+
+.mobile-products-desc {
+  color: var(--text-blue-color-2);
+  font-size: 1.25rem;
+  line-height: 24px;
+}
+
+
+.equipment {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  margin-bottom: 50px;
+}
+
+.equipment::-webkit-scrollbar {
+  display: none;
+}
+
+.mobile-equipment {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  margin-right: 12px;
+  flex: 0 0 auto;
+  text-align: center;
+  color: var(--text-blue-color-2);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.mobile-equipment img {
+  width: 100%;
+  border-radius: 20px;
 }
