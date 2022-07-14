@@ -42,7 +42,8 @@ export default function Header() {
       if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
         toggleSubMenu("");
       }
-    } 
+    }
+
     // Bind the event listener
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
@@ -156,19 +157,7 @@ export default function Header() {
     </div>
   );
 
-  if (size.width > 767) {
-    return (
-      <div
-        ref={myHeader}
-        className={`${styles.header} header ${isSticky ? styles.sticky : ""}`}
-      >
-        <div>
-          <img src="/竑澤單Logo-27.png" alt="logo" width={95} />
-          <Menu />
-        </div>
-      </div>
-    );
-  } else {
+  if (size.width < 767) {
     return (
       <>
         <div ref={myHeader} className={`${styles["mobile-header"]}`}>
@@ -201,6 +190,18 @@ export default function Header() {
         </div>
         <Menu />
       </>
+    );
+  } else {
+    return (
+      <div
+        ref={myHeader}
+        className={`${styles.header} header ${isSticky ? styles.sticky : ""}`}
+      >
+        <div>
+          <img src="/竑澤單Logo-27.png" alt="logo" width={95} />
+          <Menu />
+        </div>
+      </div>
     );
   }
 }
