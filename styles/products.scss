@@ -1,0 +1,92 @@
+.white-section {
+    margin-top: 36px;
+    width: 100%;
+    background: #FCFCFC;
+    border: 3px solid #DEE2E6;
+    border-radius: 16px;
+    padding: 30px 24px;
+}
+
+.product-type-choose {
+    display: flex;
+
+    button {
+        display: block;
+        width: 128px;
+        height: 82px;
+        background-color: #fff;
+        border: 1px solid var(--text-blue-color-4);
+        border-radius: 10px;
+        font-size: 1.25rem;
+        font-weight: bold;
+        color: var(--text-blue-color-4);
+
+        +button {
+            margin-left: 42px;
+        }
+
+        &:hover {
+            color: #fff;
+            background-color: var(--text-blue-color-4);
+        }
+    }
+}
+
+.product-type-name {
+    color: var(--title-color);
+    font-size: 1.5rem;
+    font-weight: 700;
+    background-color: var(--global-bgcolor);
+    padding: 10px 23px;
+}
+
+.product-type-Thumbnail {
+    margin-top: 16px;
+}
+
+.product-type-Thumbnail-main {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.product-type-Thumbnail-other {
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 60px;
+
+    >div {
+        // border: 1px solid #000;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 33%;
+        border-radius: 10px;
+
+        span {
+            text-align: right;
+            width: 100%;
+            display: block;
+            background: rgba(104, 104, 104, 0.87);
+            border-radius: 10px;
+            border-top-left-radius: 0px;
+            border-top-right-radius: 0px;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            padding: 10px;
+            color: var(--white-color);
+            font-size: 1.25rem;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        +div {
+            margin-left: 10px;
+        }
+    }
+}
