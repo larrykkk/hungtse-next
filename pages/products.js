@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Image from "next/image";
 import styles from "./products.module.scss";
 
 // import Header from "../components/TheHeader";
@@ -53,7 +54,7 @@ export default function Products() {
     },
   ];
 
-  console.log(productsType);
+  // console.log(productsType);
 
   return (
     <div>
@@ -74,7 +75,7 @@ export default function Products() {
           布種列表
         </div>
         <div className={styles.section}>
-          <img src="/布種一覽-42.png" alt="布種一覽" width={"100%"} />
+          <Image src="/布種一覽-42.png" alt="布種一覽" layout="fill" />
         </div>
         <div className={styles.title} style={{ marginTop: 33 + "px" }}>
           布料用途
@@ -92,13 +93,13 @@ export default function Products() {
                   <div className="product-type-name">{item.name}</div>
                   <div className="product-type-Thumbnail">
                     <div className="product-type-Thumbnail-main">
-                      <img src={item.mainImage} alt="" />
+                      <Image src={item.mainImage} alt="" layout="fill" />
                     </div>
                     <div className="product-type-Thumbnail-other">
                       {item.otherImages.map((subItem, index) => {
                         return (
                           <div key={index}>
-                            <img src={subItem.image} alt="" />
+                            <Image src={subItem.image} alt="" layout="fill" />
                             <span>{subItem.name}</span>
                           </div>
                         );

@@ -1,10 +1,11 @@
+import Image from "next/image";
 import styles from "./TheFooter.module.scss";
 
 export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.logo}>
-        <img src="/竑澤單Logo-27.png" alt="logo" width={161} />
+        <Image src="/竑澤單Logo-27.png" alt="logo" width={161} height={'100%'} />
         <br />
         <h1>竑澤實業股份有限公司</h1>
       </div>
@@ -21,16 +22,18 @@ export default function Footer() {
         </div>
       </div>
       <div className={styles["certification-slogan"]}>
-        <img
+        <Image
           src="/GRS-Logo-白字.png"
           alt="GRS-Logo"
           width={221}
+          height={'100%'}
           className={styles.img1}
         />
-        <img
+        <Image
           src="/iso9001.png"
           alt="GRS-Logo"
           width={105}
+          height={'100%'}
           className={styles.img2}
         />
         <h2 className={styles.slogen}>技術傳承、品質保證、永續經營</h2>

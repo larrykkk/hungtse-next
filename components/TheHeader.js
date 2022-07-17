@@ -1,3 +1,5 @@
+import Image from "next/image";
+import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import styles from "./TheHeader.module.scss";
 import { useWindowSize } from "../hooks/useWindowDimensions.js";
@@ -59,7 +61,7 @@ export default function Header() {
   };
 
   var toggleSubMenu = (name) => {
-    console.log(name);
+    // console.log(name);
     if (subMenuActiveName === name) {
       setSubMenuActiveName("");
     } else {
@@ -69,7 +71,7 @@ export default function Header() {
 
   var toggleMenu = () => {
     $(wrapperRef.current).slideToggle(() => {
-      console.log($(this));
+      // console.log($(this));
       if ($(this).is(":visible")) {
         $(this).css("display", "flex");
       }
@@ -83,16 +85,17 @@ export default function Header() {
       style={{ display: menuOpenState || size.width > 767 ? "flex" : "none" }}
     >
       <li className={`${getClassName("/")} `}>
-        <a href="/">首頁</a>
+        <Link href="/">
+          <a>首頁</a>
+        </Link>
       </li>
 
       <li className={`${getClassName("/products")}`}>
         <div style={{ display: "flex", width: "100%" }}>
-          <a href="/products">產品項目 </a>
-          <button
-            onClick={() => toggleSubMenu("products")}
-            style={{ marginLeft: "auto" }}
-          >
+          <Link href="/products">
+            <a>產品項目</a>
+          </Link>
+          <button style={{ marginLeft: "auto" }}>
             <FontAwesomeIcon
               icon={faAngleDown}
               style={{ marginLeft: " 8px" }}
@@ -106,53 +109,57 @@ export default function Header() {
           }`}
         >
           <li>
-            <a href="/products#a" onClick={() => toggleSubMenu("products")}>
-              寢具
-            </a>
+            <Link href="/products#a">
+              <a onClick={() => toggleSubMenu("products")}>寢具</a>
+            </Link>
           </li>
 
           {/* <hr /> */}
           <li>
-            <a href="/products#b" onClick={() => toggleSubMenu("products")}>
-              浴袍
-            </a>
+            <Link href="/products#b">
+              <a>浴袍</a>
+            </Link>
           </li>
 
           {/* <hr /> */}
           <li>
-            <a href="/products#c" onClick={() => toggleSubMenu("products")}>
-              成衣
-            </a>
+            <Link href="/products#c">
+              <a>成衣</a>
+            </Link>
           </li>
 
           {/* <hr /> */}
           <li>
-            <a href="/products#d" onClick={() => toggleSubMenu("products")}>
-              醫療
-            </a>
+            <Link href="/products#d">
+              <a>醫療</a>
+            </Link>
           </li>
 
           {/* <hr /> */}
           <li>
-            <a href="/products#e" onClick={() => toggleSubMenu("products")}>
-              迷彩
-            </a>
+            <Link href="/products#e">
+              <a>迷彩</a>
+            </Link>
           </li>
         </ul>
       </li>
 
       <li className={`${getClassName("/factory_intro")}`}>
-        <a href="/factory_intro">廠區介紹</a>
+        <Link href="/factory_intro">
+          <a>廠區介紹</a>
+        </Link>
       </li>
 
       <li className={`${getClassName("/about")}`}>
-        <a href="/about">關於竑澤</a>
+        <Link href="/about">
+          <a>關於竑澤</a>
+        </Link>
       </li>
 
       <li className={`${getClassName("/contact")}`}>
-        <a href="/contact">
+        <Link href="/contact">
           <span className={`${styles.contactme} contactme`}>聯絡我們</span>
-        </a>
+        </Link>
       </li>
     </div>
   );
@@ -161,14 +168,18 @@ export default function Header() {
     return (
       <>
         <div ref={myHeader} className={`${styles["mobile-header"]}`}>
-          <img
+          <Image
             className={styles["m-logo"]}
             src="/竑澤單Logo-27.png"
+            width={62}
+            height={34}
             alt="logo"
           />
-          <img
+          <Image
             className={styles["m-site-name"]}
             src="/竑澤 橫式文字-38.png"
+            width={188}
+            height={20}
             alt="竑澤 橫式文字"
           />
 
@@ -198,7 +209,7 @@ export default function Header() {
         className={`${styles.header} header ${isSticky ? styles.sticky : ""}`}
       >
         <div>
-          <img src="/竑澤單Logo-27.png" alt="logo" width={95} />
+          <Image src="/竑澤單Logo-27.png" alt="logo" width={95} height={52} />
           <Menu />
         </div>
       </div>

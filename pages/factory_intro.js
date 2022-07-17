@@ -15,7 +15,7 @@ export default function Factory() {
 
       <main>
         {/* lorem*1000 */}
-        {/* <img
+        {/* <Image
           src="/aaaaa.png"
           alt="d"
           style={{ width: 85 + "%", maxWidth: 600 + "px" }}

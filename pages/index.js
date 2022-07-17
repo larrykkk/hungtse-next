@@ -1,9 +1,12 @@
 import { useState, useRef, useEffect } from "react";
 import Head from "next/head";
+import Image from "next/image";
+import Link from "next/link";
+
 import styles from "./index.module.scss";
 
-import Header from "../components/TheHeader";
-import Footer from "../components/TheFooter";
+// import Header from "../components/TheHeader";
+// import Footer from "../components/TheFooter";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -117,7 +120,7 @@ export default function Home() {
       </Head>
 
       <div className={styles.banner}>
-        <div className={styles. desc}>
+        <div className={styles.desc}>
           <h3>品質第一，堅持做到最好</h3>
           <h2 style={{ marginTop: "20px" }}>
             竑澤成立於81 年10 月，為中華民國經濟部核准公司，並於84 年 <br />
@@ -134,29 +137,29 @@ export default function Home() {
         <div className={styles.section}>
           <div className={`${styles.content} ${styles.advantage}`}>
             <div>
-              <img src="/機動性高.png" alt="機動性高 icon" />
+              <Image src="/機動性高.png" alt="機動性高 icon" layout="fill" />
               <span>機動性高</span>
             </div>
             <div>
-              <img src="/品質穩定.png" alt="品質穩定 icon" />
+              <Image src="/品質穩定.png" alt="品質穩定 icon" layout="fill" />
               <span>品質穩定</span>
             </div>
             <div>
-              <img src="/交貨守時.png" alt="交貨守時 icon" />
+              <Image src="/交貨守時.png" alt="交貨守時 icon" layout="fill" />
               <span>交貨守時</span>
             </div>
             <div>
-              <img src="/服務多元.png" alt="服務多元 icon" />
+              <Image src="/服務多元.png" alt="服務多元 icon" layout="fill" />
               <span>服務多元</span>
             </div>
             <div>
-              <img src="/價格合理.png" alt="價格合理 icon" />
+              <Image src="/價格合理.png" alt="價格合理 icon" layout="fill" />
               <span>價格合理</span>
             </div>
           </div>
-          <a href="/about">
+          <Link href="/about">
             <button className={styles.button}>關於竑澤</button>
-          </a>
+          </Link>
         </div>
 
         <div className={styles.title}>產品項目</div>
@@ -184,7 +187,7 @@ export default function Home() {
                   return (
                     <SwiperSlide key={item.id} data-id={item.id}>
                       <div ref={swiperSlides}>
-                        <img src={item.img} alt={item.title} />
+                        <Image src={item.img} alt={item.title} layout="fill" />
                       </div>
                       <span className={styles.swiperDesc}>{item.title}</span>
                     </SwiperSlide>
@@ -210,7 +213,7 @@ export default function Home() {
                 return (
                   <div className={styles["mobile-products"]} key={item.id}>
                     <div style={{ marginBottom: "12px" }}>
-                      <img src={item.img} alt={item.title} />
+                      <Image src={item.img} alt={item.title} layout="fill" />
                     </div>
                     <span className={styles["mobile-products-desc"]}>
                       {item.title}
@@ -222,9 +225,9 @@ export default function Home() {
           )}
 
           <div>
-            <a href="/about">
+            <Link href="/about">
               <button className={styles.button}>了解更多</button>
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -253,7 +256,7 @@ export default function Home() {
                   return (
                     <SwiperSlide key={item.id} data-id={item.id}>
                       <div ref={swiperSlides}>
-                        <img src={item.img} alt={item.title} />
+                        <Image src={item.img} alt={item.title} layout="fill" />
                       </div>
                       <span className={styles.swiperDesc}>{item.title}</span>
                     </SwiperSlide>
@@ -279,7 +282,11 @@ export default function Home() {
                 return (
                   <div className={styles["mobile-equipment"]} key={item.id}>
                     <div style={{ marginBottom: "12px" }}>
-                      <img src={`/${item.name}-1.jpg`} alt={item.name} />
+                      <Image
+                        src={`/${item.name}-1.jpg`}
+                        alt={item.name}
+                        layout="fill"
+                      />
                     </div>
                     <span className={styles["mobile-equipment-desc"]}>
                       {item.name}
@@ -290,9 +297,9 @@ export default function Home() {
             </div>
           )}
 
-          <a href="/factory_intro">
+          <Link href="/factory_intro">
             <button className={styles.button}>了解更多</button>
-          </a>
+          </Link>
         </div>
       </main>
     </div>
