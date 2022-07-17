@@ -28,7 +28,13 @@ jobs:
           git config user.email github-actions@github.com
           git checkout -b gh-pages origin/gh-pages
           git pull
+
+          mkdir other
+          mv * other/
+          mv other/out .
+          rm -rf todelete
           cp -r ./out/* ./
+
           git add .
           git commit -m "generated"
           git push
