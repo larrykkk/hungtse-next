@@ -1,0 +1,15 @@
+.horizontal-scroll {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    &-item {
+        flex: 0 0 auto;
+    }
+}

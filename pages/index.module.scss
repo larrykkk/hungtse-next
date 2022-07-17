@@ -162,18 +162,9 @@
   line-height: 24px;
 }
 
-
 .equipment {
   width: 100%;
-  display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  scroll-behavior: smooth;
   margin-bottom: 50px;
-}
-
-.equipment::-webkit-scrollbar {
-  display: none;
 }
 
 .mobile-equipment {

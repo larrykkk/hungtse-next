@@ -1,11 +1,24 @@
+import { useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "./products.module.scss";
-
-// import Header from "../components/TheHeader";
-// import Footer from "../components/TheFooter";
+import { useWindowSize } from "../hooks/useWindowDimensions.js";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 
 export default function Products() {
+  const size = useWindowSize();
+  const [selectd, setSelectd] = useState([]);
+  const [choosed, setChoosed] = useState(false);
+
+  const toggleSelectd = (item) => {
+    if (!selectd.includes(item)) {
+      setSelectd([...selectd, item]);
+    } else {
+      setSelectd(selectd.filter((i) => i !== item));
+    }
+  };
+
   const images = {
     mainImage:
       "https://images.pexels.com/photos/957024/forest-trees-perspective-bright-957024.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -54,8 +67,6 @@ export default function Products() {
     },
   ];
 
-  // console.log(productsType);
-
   return (
     <div>
       <Head>
@@ -86,46 +97,151 @@ export default function Products() {
           布料用途
         </div>
         <div className={`${styles.section} `}>
-          <div className="product-type-choose white-section">
-            {productsType.map((item, index) => {
-              return <button key={index}>{item.name}</button>;
-            })}
-          </div>
-          <div className="Thumbnail white-section">
-            {productsType.map((item, index) => {
-              return (
-                <div key={index}>
-                  <div className="product-type-name">{item.name}</div>
-                  <div className="product-type-Thumbnail">
-                    <div className="product-type-Thumbnail-main">
-                      <Image
-                        src={item.mainImage}
-                        alt=""
-                        width={1145}
-                        height={796}
-                      />
-                    </div>
-                    <div
-                      className="product-type-Thumbnail-other"
-                      style={{
-                        width: "100%",
-                        height: "250px",
-                      }}
-                    >
-                      {item.otherImages.map((subItem, index) => {
-                        return (
-                          <div key={index}>
-                            <Image src={subItem.image} alt="" layout="fill" />
-                            <span>{subItem.name}</span>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </div>
+          {size.width > 767 ? (
+            <div className="product-type-choose white-section">
+              {productsType.map((item, index) => {
+                return (
+                  <button
+                    key={index}
+                    className={`${
+                      selectd.includes(item.name) ? "selected" : ""
+                    }`}
+                    onClick={() => toggleSelectd(item.name)}
+                  >
+                    {item.name}
+                  </button>
+                );
+              })}
+            </div>
+          ) : (
+            <>
+              <div className="product-type-checkbox white-section">
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    cursor: "pointer",
+                  }}
+                  onClick={() => setChoosed(!choosed)}
+                >
+                  <h3 style={{ fontSize: "20px" }}>
+                    依用途選擇(未選擇顯示全部)
+                  </h3>
+                  <FontAwesomeIcon
+                    icon={faAngleDown}
+                    style={{ marginLeft: "auto" }}
+                  />
                 </div>
-              );
-            })}
-          </div>
+                {choosed ? (
+                  <div className="checkboxs">
+                    {productsType.map((item) => {
+                      return (
+                        <div key={item.name + "input"}>
+                          <input
+                            type="checkbox"
+                            id={item.name}
+                            onClick={() => toggleSelectd(item.name)}
+                          ></input>
+                          <label htmlFor={item.name}>{item.name}</label>
+                        </div>
+                      );
+                    })}
+                  </div>
+                ) : (
+                  ""
+                )}
+              </div>
+            </>
+          )}
+
+          {size.width > 767 ? (
+            <div className="Thumbnail white-section">
+              {productsType
+                .filter((x) => (selectd.length ? selectd.includes(x.name) : x))
+                .map((item, index) => {
+                  return (
+                    <div key={index}>
+                      <div className="product-type-name">{item.name}</div>
+                      <div className="product-type-Thumbnail">
+                        <div className="product-type-Thumbnail-main">
+                          <Image
+                            src={item.mainImage}
+                            alt=""
+                            width={1145}
+                            height={796}
+                          />
+                        </div>
+                        <div
+                          className="product-type-Thumbnail-other"
+                          style={{
+                            width: "100%",
+                            height: "250px",
+                          }}
+                        >
+                          {item.otherImages.map((subItem, index) => {
+                            return (
+                              <div key={index}>
+                                <Image
+                                  src={subItem.image}
+                                  alt=""
+                                  layout="fill"
+                                />
+                                <span>{subItem.name}</span>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+            </div>
+          ) : (
+            <div className="Thumbnail white-section">
+              {productsType
+                .filter((x) => (selectd.length ? selectd.includes(x.name) : x))
+                .map((item, index) => {
+                  return (
+                    <div key={index}>
+                      <div className="product-type-name">{item.name}</div>
+                      <div className="product-type-Thumbnail ">
+                        <div
+                          className="product-type-Thumbnail-other horizontal-scroll"
+                          style={{
+                            width: "100%",
+                          }}
+                        >
+                          <div className="horizontal-scroll-item">
+                            <Image
+                              src={item.mainImage}
+                              alt="產品主圖"
+                              layout="fill"
+                            />
+                            {/* <span>{subItem.name}</span> */}
+                          </div>
+
+                          {item.otherImages.map((subItem, index) => {
+                            return (
+                              <div
+                                key={index}
+                                className="horizontal-scroll-item"
+                              >
+                                <Image
+                                  src={subItem.image}
+                                  alt=""
+                                  layout="fill"
+                                />
+                                <span>{subItem.name}</span>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+            </div>
+          )}
         </div>
       </main>
     </div>

@@ -80,7 +80,7 @@ export default function Header() {
       </li>
 
       <li className={`${getClassName("/products")}`}>
-        <div>
+        <div style={{ display: "flex", width: "100%" }}>
           <Link href="/products">
             <a>產品項目</a>
           </Link>
@@ -158,7 +158,7 @@ export default function Header() {
     </div>
   );
 
-  if (size.width < 767) {
+  if (size.width < 768) {
     return (
       <>
         <div ref={myHeader} className={`${styles["mobile-header"]}`}>
