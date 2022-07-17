@@ -2,11 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-
 import styles from "./index.module.scss";
-
-// import Header from "../components/TheHeader";
-// import Footer from "../components/TheFooter";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -86,10 +82,8 @@ export default function Home() {
     },
   ]);
 
-  // 落布機-1.jpg
-
   // const [width, setWidth] = useState();
-  const [height, setHeight] = useState();
+  const [height, setHeight] = useState(0);
 
   // This function calculates width and height of the list
   const getListSize = () => {
@@ -137,23 +131,48 @@ export default function Home() {
         <div className={styles.section}>
           <div className={`${styles.content} ${styles.advantage}`}>
             <div>
-              <Image src="/機動性高.png" alt="機動性高 icon" layout="fill" />
+              <Image
+                src="/機動性高.png"
+                alt="機動性高 icon"
+                width={200}
+                height={200}
+              />
               <span>機動性高</span>
             </div>
             <div>
-              <Image src="/品質穩定.png" alt="品質穩定 icon" layout="fill" />
+              <Image
+                src="/品質穩定.png"
+                alt="品質穩定 icon"
+                width={200}
+                height={200}
+              />
               <span>品質穩定</span>
             </div>
             <div>
-              <Image src="/交貨守時.png" alt="交貨守時 icon" layout="fill" />
+              <Image
+                src="/交貨守時.png"
+                alt="交貨守時 icon"
+                width={200}
+                height={200}
+              />
               <span>交貨守時</span>
             </div>
             <div>
-              <Image src="/服務多元.png" alt="服務多元 icon" layout="fill" />
+              <Image
+                src="/服務多元.png"
+                alt="服務多元 icon"
+                width={200}
+                height={200}
+              />
               <span>服務多元</span>
             </div>
             <div>
-              <Image src="/價格合理.png" alt="價格合理 icon" layout="fill" />
+              <Image
+                src="/價格合理.png"
+                alt="價格合理 icon"
+                width={200}
+                height={200}
+              />
               <span>價格合理</span>
             </div>
           </div>
@@ -185,8 +204,13 @@ export default function Home() {
               >
                 {slides.map((item) => {
                   return (
-                    <SwiperSlide key={item.id} data-id={item.id}>
-                      <div ref={swiperSlides}>
+                    <SwiperSlide
+                      key={item.id}
+                      data-id={item.id}
+                      style={{ height: "265px" }}
+                      ref={swiperSlides}
+                    >
+                      <div>
                         <Image src={item.img} alt={item.title} layout="fill" />
                       </div>
                       <span className={styles.swiperDesc}>{item.title}</span>
@@ -213,7 +237,12 @@ export default function Home() {
                 return (
                   <div className={styles["mobile-products"]} key={item.id}>
                     <div style={{ marginBottom: "12px" }}>
-                      <Image src={item.img} alt={item.title} layout="fill" />
+                      <Image
+                        src={item.img}
+                        alt={item.title}
+                        width={300}
+                        height={200}
+                      />
                     </div>
                     <span className={styles["mobile-products-desc"]}>
                       {item.title}
@@ -252,19 +281,28 @@ export default function Home() {
                 key={1}
                 style={{ marginBottom: "70px" }}
               >
-                {slides.map((item) => {
+                {equipment.map((item) => {
                   return (
-                    <SwiperSlide key={item.id} data-id={item.id}>
-                      <div ref={swiperSlides}>
-                        <Image src={item.img} alt={item.title} layout="fill" />
+                    <SwiperSlide
+                      key={item.id}
+                      data-id={item.id}
+                      style={{ height: "265px" }}
+                      ref={swiperSlides}
+                    >
+                      <div>
+                        <Image
+                          src={`/${item.name}-1.jpg`}
+                          alt={item.name}
+                          layout="fill"
+                        />
                       </div>
-                      <span className={styles.swiperDesc}>{item.title}</span>
+                      <span className={styles.swiperDesc}>{item.name}</span>
                     </SwiperSlide>
                   );
                 })}
               </Swiper>
               <div
-                className="swiper-but【ton-prev"
+                className="swiper-button-prev"
                 style={{
                   top: `${height / 2}px`,
                 }}
@@ -285,7 +323,8 @@ export default function Home() {
                       <Image
                         src={`/${item.name}-1.jpg`}
                         alt={item.name}
-                        layout="fill"
+                        width={300}
+                        height={200}
                       />
                     </div>
                     <span className={styles["mobile-equipment-desc"]}>

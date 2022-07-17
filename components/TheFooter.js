@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.logo}>
-        <Image src="/竑澤單Logo-27.png" alt="logo" width={161} height={'100%'} />
+        <Image src="/竑澤單Logo-27.png" alt="logo" width={161} height={87} />
         <br />
         <h1>竑澤實業股份有限公司</h1>
       </div>

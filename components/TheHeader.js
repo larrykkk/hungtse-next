@@ -1,25 +1,29 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
+import { useRouter } from "next/router";
 import styles from "./TheHeader.module.scss";
 import { useWindowSize } from "../hooks/useWindowDimensions.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown, faXmark } from "@fortawesome/free-solid-svg-icons";
 
 export default function Header() {
+  const router = useRouter();
   const myHeader = useRef(null);
-  const [activeName, setActiveName] = useState("");
+  const [pathname, setPathname] = useState(router.pathname);
+  const [subMenuActiveName, setSubMenuActiveName] = useState("");
   const [isSticky, setIsSticky] = useState("");
   const size = useWindowSize();
-  const [subMenuActiveName, setSubMenuActiveName] = useState("");
   const [menuOpenState, setMenuOpenState] = useState(false);
 
   const wrapperRef = useRef(null);
 
   useEffect(() => {
-    window.$ = window.jQuery = require("jquery");
+    setPathname(router.pathname);
+  }, [router.pathname]);
 
-    setActiveName(window.location.pathname);
+  useEffect(() => {
+    window.$ = window.jQuery = require("jquery");
 
     var sticky = myHeader.current.offsetTop;
 
@@ -37,45 +41,30 @@ export default function Header() {
   }, []);
 
   useEffect(() => {
-    /**
-     * Alert if clicked on outside of element
-     */
     function handleClickOutside(event) {
       if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
         toggleSubMenu("");
       }
     }
 
-    // Bind the event listener
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
-      // Unbind the event listener on clean up
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [wrapperRef]);
 
-  var getClassName = (pathname) => {
-    return activeName === pathname
-      ? `${styles.active} ${styles.link}`
+  var getClassName = (_pathname) => {
+    return pathname === _pathname
+      ? `${styles.active} ${styles.link} active`
       : `${styles.link}`;
   };
 
   var toggleSubMenu = (name) => {
-    // console.log(name);
     if (subMenuActiveName === name) {
       setSubMenuActiveName("");
     } else {
       setSubMenuActiveName(name);
     }
-  };
-
-  var toggleMenu = () => {
-    $(wrapperRef.current).slideToggle(() => {
-      // console.log($(this));
-      if ($(this).is(":visible")) {
-        $(this).css("display", "flex");
-      }
-    });
   };
 
   const Menu = () => (
@@ -84,18 +73,21 @@ export default function Header() {
       className={styles.menu}
       style={{ display: menuOpenState || size.width > 767 ? "flex" : "none" }}
     >
-      <li className={`${getClassName("/")} `}>
+      <li className={`${getClassName("/")}`}>
         <Link href="/">
           <a>首頁</a>
         </Link>
       </li>
 
       <li className={`${getClassName("/products")}`}>
-        <div style={{ display: "flex", width: "100%" }}>
+        <div>
           <Link href="/products">
             <a>產品項目</a>
           </Link>
-          <button style={{ marginLeft: "auto" }}>
+          <button
+            onClick={() => toggleSubMenu("products")}
+            style={{ marginLeft: "auto" }}
+          >
             <FontAwesomeIcon
               icon={faAngleDown}
               style={{ marginLeft: " 8px" }}
@@ -158,7 +150,9 @@ export default function Header() {
 
       <li className={`${getClassName("/contact")}`}>
         <Link href="/contact">
-          <span className={`${styles.contactme} contactme`}>聯絡我們</span>
+          <a>
+            <span className={`${styles.contactme} contactme`}>聯絡我們</span>
+          </a>
         </Link>
       </li>
     </div>

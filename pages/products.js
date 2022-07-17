@@ -75,7 +75,12 @@ export default function Products() {
           布種列表
         </div>
         <div className={styles.section}>
-          <Image src="/布種一覽-42.png" alt="布種一覽" layout="fill" />
+          <Image
+            src="/布種一覽-42.png"
+            alt="布種一覽"
+            width={1200}
+            height={285}
+          />
         </div>
         <div className={styles.title} style={{ marginTop: 33 + "px" }}>
           布料用途
@@ -93,9 +98,20 @@ export default function Products() {
                   <div className="product-type-name">{item.name}</div>
                   <div className="product-type-Thumbnail">
                     <div className="product-type-Thumbnail-main">
-                      <Image src={item.mainImage} alt="" layout="fill" />
+                      <Image
+                        src={item.mainImage}
+                        alt=""
+                        width={1145}
+                        height={796}
+                      />
                     </div>
-                    <div className="product-type-Thumbnail-other">
+                    <div
+                      className="product-type-Thumbnail-other"
+                      style={{
+                        width: "100%",
+                        height: "250px",
+                      }}
+                    >
                       {item.otherImages.map((subItem, index) => {
                         return (
                           <div key={index}>

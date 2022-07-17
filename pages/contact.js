@@ -1,6 +1,4 @@
 import Head from "next/head";
-import Header from "../components/TheHeader";
-import Footer from "../components/TheFooter";
 
 export default function Contact() {
   return (
@@ -11,11 +9,7 @@ export default function Contact() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Header></Header>
-
       <main>contact</main>
-
-      <Footer></Footer>
     </div>
   );
 }

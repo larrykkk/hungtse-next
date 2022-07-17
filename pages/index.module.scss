@@ -112,6 +112,10 @@
   }
 }
 
+.advantage div {
+  position: relative;
+}
+
 .button {
   @media screen and (max-width: 767px) {
     font-size: 1.25rem;
@@ -133,16 +137,15 @@
 }
 
 .products {
+  width: 100%;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   flex-direction: row;
   margin-bottom: 40px;
 }
 
 .mobile-products {
-  // display: flex;
-  // fwwrap: wrap;
-  // max-width: 200px;
   max-width: calc(50% - 8px * 2);
   text-align: center;
   margin: 8px;
