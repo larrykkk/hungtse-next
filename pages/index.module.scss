@@ -116,6 +116,11 @@
   position: relative;
 }
 
+.advantage div span {
+  // position: relative;
+  margin-top: 30px;
+}
+
 .button {
   @media screen and (max-width: 767px) {
     font-size: 1.25rem;

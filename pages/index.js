@@ -134,8 +134,8 @@ export default function Home() {
               <Image
                 src="/機動性高.png"
                 alt="機動性高 icon"
-                width={200}
-                height={200}
+                width={'100%'}
+                height={'100%'}
               />
               <span>機動性高</span>
             </div>
@@ -143,8 +143,8 @@ export default function Home() {
               <Image
                 src="/品質穩定.png"
                 alt="品質穩定 icon"
-                width={200}
-                height={200}
+                width={'100%'}
+                height={'100%'}
               />
               <span>品質穩定</span>
             </div>
@@ -152,8 +152,8 @@ export default function Home() {
               <Image
                 src="/交貨守時.png"
                 alt="交貨守時 icon"
-                width={200}
-                height={200}
+                width={'100%'}
+                height={'100%'}
               />
               <span>交貨守時</span>
             </div>
@@ -161,8 +161,8 @@ export default function Home() {
               <Image
                 src="/服務多元.png"
                 alt="服務多元 icon"
-                width={200}
-                height={200}
+                width={'100%'}
+                height={'100%'}
               />
               <span>服務多元</span>
             </div>
@@ -170,8 +170,8 @@ export default function Home() {
               <Image
                 src="/價格合理.png"
                 alt="價格合理 icon"
-                width={200}
-                height={200}
+                width={'100%'}
+                height={'100%'}
               />
               <span>價格合理</span>
             </div>
@@ -241,7 +241,7 @@ export default function Home() {
                         src={item.img}
                         alt={item.title}
                         width={300}
-                        height={200}
+                        height={'100%'}
                       />
                     </div>
                     <span className={styles["mobile-products-desc"]}>
@@ -324,7 +324,7 @@ export default function Home() {
                         src={`/${item.name}-1.jpg`}
                         alt={item.name}
                         width={300}
-                        height={200}
+                        height={'100%'}
                       />
                     </div>
                     <span className={styles["mobile-equipment-desc"]}>

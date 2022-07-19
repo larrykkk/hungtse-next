@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  basePath: "/larrykkk",
-  assetPrefix: "/larrykkk/",
+  // basePath: "/",
+  // assetPrefix: "/larrykkk/",
   reactStrictMode: true,
   images: {
     loader: "akamai",
