@@ -11,10 +11,10 @@ export default function Header() {
   const router = useRouter();
   const myHeader = useRef(null);
   const [pathname, setPathname] = useState(router.pathname);
+  const [menuOpenState, setMenuOpenState] = useState(false);
   const [subMenuActiveName, setSubMenuActiveName] = useState("");
   const [isSticky, setIsSticky] = useState("");
   const size = useWindowSize();
-  const [menuOpenState, setMenuOpenState] = useState(false);
 
   const wrapperRef = useRef(null);
 
@@ -73,7 +73,10 @@ export default function Header() {
       className={styles.menu}
       style={{ display: menuOpenState || size.width > 767 ? "flex" : "none" }}
     >
-      <li className={`${getClassName("/")}`}>
+      <li
+        className={`${getClassName("/")}`}
+        onClick={() => setMenuOpenState(!menuOpenState)}
+      >
         <Link href="/">
           <a>首頁</a>
         </Link>
@@ -82,16 +85,13 @@ export default function Header() {
       <li className={`${getClassName("/products")}`}>
         <div style={{ display: "flex", width: "100%" }}>
           <Link href="/products">
-            <a>產品項目</a>
+            <a onClick={() => setMenuOpenState(false)}>產品項目</a>
           </Link>
           <button
             onClick={() => toggleSubMenu("products")}
-            style={{ marginLeft: "auto" }}
+            className="subMenuButton"
           >
-            <FontAwesomeIcon
-              icon={faAngleDown}
-              style={{ marginLeft: " 8px" }}
-            />
+            <FontAwesomeIcon icon={faAngleDown} style={{}} />
           </button>
         </div>
 
@@ -100,35 +100,31 @@ export default function Header() {
             subMenuActiveName === "products" ? "open" : ""
           }`}
         >
-          <li>
-            <Link href="/products#a">
+          <li onClick={() => setMenuOpenState(false)}>
+            <Link href="/products#寢具">
               <a onClick={() => toggleSubMenu("products")}>寢具</a>
             </Link>
           </li>
 
-          {/* <hr /> */}
-          <li>
+          <li onClick={() => setMenuOpenState(false)}>
             <Link href="/products#b">
               <a>浴袍</a>
             </Link>
           </li>
 
-          {/* <hr /> */}
-          <li>
+          <li onClick={() => setMenuOpenState(false)}>
             <Link href="/products#c">
               <a>成衣</a>
             </Link>
           </li>
 
-          {/* <hr /> */}
-          <li>
+          <li onClick={() => setMenuOpenState(false)}>
             <Link href="/products#d">
               <a>醫療</a>
             </Link>
           </li>
 
-          {/* <hr /> */}
-          <li>
+          <li onClick={() => setMenuOpenState(false)}>
             <Link href="/products#e">
               <a>迷彩</a>
             </Link>
@@ -136,19 +132,28 @@ export default function Header() {
         </ul>
       </li>
 
-      <li className={`${getClassName("/factory_intro")}`}>
+      <li
+        className={`${getClassName("/factory_intro")}`}
+        onClick={() => setMenuOpenState(false)}
+      >
         <Link href="/factory_intro">
           <a>廠區介紹</a>
         </Link>
       </li>
 
-      <li className={`${getClassName("/about")}`}>
+      <li
+        className={`${getClassName("/about")}`}
+        onClick={() => setMenuOpenState(false)}
+      >
         <Link href="/about">
           <a>關於竑澤</a>
         </Link>
       </li>
 
-      <li className={`${getClassName("/contact")}`}>
+      <li
+        className={`${getClassName("/contact")}`}
+        onClick={() => setMenuOpenState(false)}
+      >
         <Link href="/contact">
           <a>
             <span className={`${styles.contactme} contactme`}>聯絡我們</span>

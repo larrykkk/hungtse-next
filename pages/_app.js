@@ -12,10 +12,14 @@ import '@fortawesome/fontawesome-svg-core/styles.css'
 config.autoAddCss = false
 
 import Layout from '../components/layout'
+import Head from "next/head";
 
 function MyApp({ Component, pageProps }) {
   return (
     <Layout>
+      <Head>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <Component {...pageProps} />
     </Layout>
   )

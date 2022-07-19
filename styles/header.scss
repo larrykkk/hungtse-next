@@ -219,11 +219,6 @@
         color: var(--text-blue-color-2) !important;
     }
 
-    li {
-        // padding: 15px;
-    }
-
-
     li+li {
         border-top: 1px solid #BABABA;
     }
@@ -232,4 +227,16 @@
 .xmark {
     margin-right: 5px;
     color: rgba(0, 0, 0, 0.55);
+}
+
+.subMenuButton {
+    @media screen and (max-width: 767px) {
+        background-color: rgb(231 231 231);
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        margin-left: auto;
+    }
+
+    margin-left: 8px;
 }

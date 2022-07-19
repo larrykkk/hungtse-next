@@ -30,6 +30,10 @@ html {
   background-color: var(--global-bgcolor);
 }
 
+html {
+  scroll-padding-top: 90px; /* height of sticky header */
+}
+
 body {
   margin: 0;
   overflow-x: hidden;
