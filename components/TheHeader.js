@@ -133,10 +133,10 @@ export default function Header() {
       </li>
 
       <li
-        className={`${getClassName("/factory_intro")}`}
+        className={`${getClassName("/factory")}`}
         onClick={() => setMenuOpenState(false)}
       >
-        <Link href="/factory_intro">
+        <Link href="/factory">
           <a>廠區介紹</a>
         </Link>
       </li>

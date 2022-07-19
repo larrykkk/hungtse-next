@@ -338,7 +338,7 @@ export default function Home() {
             </div>
           )}
 
-          <Link href="/factory_intro">
+          <Link href="/factory">
             <button className={styles.button}>了解更多</button>
           </Link>
         </div>
