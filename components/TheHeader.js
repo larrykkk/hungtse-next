@@ -107,25 +107,25 @@ export default function Header() {
           </li>
 
           <li onClick={() => setMenuOpenState(false)}>
-            <Link href="/products#b">
+            <Link href="/products#浴袍">
               <a>浴袍</a>
             </Link>
           </li>
 
           <li onClick={() => setMenuOpenState(false)}>
-            <Link href="/products#c">
+            <Link href="/products#成衣">
               <a>成衣</a>
             </Link>
           </li>
 
           <li onClick={() => setMenuOpenState(false)}>
-            <Link href="/products#d">
+            <Link href="/products#醫療">
               <a>醫療</a>
             </Link>
           </li>
 
           <li onClick={() => setMenuOpenState(false)}>
-            <Link href="/products#e">
+            <Link href="/products#迷彩">
               <a>迷彩</a>
             </Link>
           </li>
