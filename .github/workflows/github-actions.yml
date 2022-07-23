@@ -22,18 +22,20 @@ jobs:
         run: |
           # git branch
           npm run static
-          # ls
+          # ls -al
           # git status
           git config user.name github-actions
           git config user.email github-actions@github.com
           git checkout -b gh-pages origin/gh-pages
           git pull
 
-          mkdir other
-          mv * other/
-          mv other/out .
-          rm -rf todelete
-          cp -r ./out/* ./
+          # ls -al
+          mv out/ ../out
+          rm -rf *
+          # ls -al
+          cp -r ../out/* .
+          touch .nojekyll
+          # ls -al
 
           git add .
           git commit -m "generated"
