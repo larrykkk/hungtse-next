@@ -111,7 +111,12 @@ export default function Factory() {
         />
       </Head>
 
-      <div className={styles.banner}>
+      <div
+        className={styles.banner}
+        style={{
+          backgroundImage: `url(/_123282362_hi042879001.jpg)`,
+        }}
+      >
         <div className={styles.desc}>
           <h2>廠區介紹</h2>
         </div>
@@ -394,7 +399,7 @@ export default function Factory() {
               >
                 <Link href={""}>
                   <a
-                    href={`/compress/${item.name}-1.${"jpg" || "png"}`}
+                    href={`/${item.name}-1.${"jpg" || "png"}`}
                     data-pswp-width={1200}
                     data-pswp-height={800}
                     target="_blank"
@@ -402,7 +407,7 @@ export default function Factory() {
                   >
                     <div className="image">
                       <Image
-                        src={`/compress/${item.name}-1.${"jpg" || "png"}`}
+                        src={`/comp3/${item.name}-1.${"jpg" || "png"}`}
                         layout="fill"
                       ></Image>
                       <FontAwesomeIcon
@@ -428,7 +433,7 @@ export default function Factory() {
 
                 <Link href={""} style={{ visibility: "hidden" }}>
                   <a
-                    href={`/compress/${item.name}-2.${"jpg" || "png"}`}
+                    href={`/${item.name}-2.${"jpg" || "png"}`}
                     data-pswp-width={1200}
                     data-pswp-height={800}
                     target="_blank"
@@ -437,7 +442,7 @@ export default function Factory() {
                   >
                     <div className="image" style={{ visibility: "hidden" }}>
                       <Image
-                        src={`/compress/${item.name}-2.${"jpg" || "png"}`}
+                        src={`/comp3/${item.name}-2.${"jpg" || "png"}`}
                         layout="fill"
                       ></Image>
                       <FontAwesomeIcon

@@ -77,7 +77,12 @@ export default function Products() {
         />
       </Head>
 
-      <div className={styles.banner}>
+      <div
+        className={styles.banner}
+        style={{
+          backgroundImage: `url(/_123282362_hi042879001.jpg)`,
+        }}
+      >
         <div className={styles.desc}>
           <h3>產品項目</h3>
         </div>

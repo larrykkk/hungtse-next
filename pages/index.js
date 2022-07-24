@@ -112,7 +112,9 @@ export default function Home() {
         />
       </Head>
 
-      <div className={styles.banner}>
+      <div className={styles.banner} style={{
+          backgroundImage: `url(/_123282362_hi042879001.jpg)`,
+        }}>
         <div className={styles.desc}>
           <h3>品質第一，堅持做到最好</h3>
           <h2 style={{ marginTop: "20px" }}>
@@ -290,7 +292,7 @@ export default function Home() {
                     >
                       <div>
                         <Image
-                          src={`/${item.name}-1.jpg`}
+                          src={`/comp3/${item.name}-1.jpg`}
                           alt={item.name}
                           layout="fill"
                         />
