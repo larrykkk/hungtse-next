@@ -26,6 +26,9 @@
     max-width: var(--global-pc-width);
     margin-top: 228px;
     color: var(--white-color);
+    margin-top: 128px;
+    display: flex;
+    align-items: center;
     font-size: 3rem;
     text-align: center;
     font-size: 1rem;
@@ -33,18 +36,13 @@
     text-align: center;
 }
 
-.desc h3 {
+.desc h2 {
     @media screen and (max-width: 767px) {
         font-size: 2rem;
     }
 
     font-weight: bold;
     font-size: 3rem;
-}
-
-.desc h2 {
-    font-weight: bold;
-    font-size: 1rem;
 }
 
 .title {

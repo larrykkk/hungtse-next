@@ -1,5 +1,9 @@
 // .section {}
 
+h3 {
+    font-size: 2.25rem;
+}
+
 .services {
     margin: 0 auto;
     max-width: 400px;
@@ -90,4 +94,70 @@
 
 .popover-arrow {
     display: none !important;
+}
+
+.equipment {
+    display: flex;
+    flex-direction: row !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media screen and (max-width: 1024px) {
+        max-width: 770px;
+    }
+
+    @media screen and (max-width: 767px) {
+        flex-direction: column !important;
+    }
+
+    .equipment-item {
+        border: 1px solid #C8C8C8;
+        border-radius: 30px;
+        max-width: 385px;
+        width: calc((100% - 40px) / 3);
+        height: 480px;
+
+        @media screen and (max-width: 1024px) {
+            width: calc((100% - 20px) / 2);
+        }
+
+        @media screen and (max-width: 767px) {
+            width: 100%;
+        }
+
+        .image {
+            cursor: zoom-in;
+            position: relative;
+            max-width: 385px;
+            max-height: 250px;
+            width: 100%;
+            height: 100%;
+
+            img {
+                border-top-left-radius: 30px;
+                border-top-right-radius: 30px;
+            }
+        }
+
+        .text {
+            padding: 20px 40px;
+            text-align: center;
+
+            @media screen and (max-width: 767px) {
+                width: 100%;
+                padding: 20px;
+            }
+
+            h3 {
+                color: var(--text-blue-color-2);
+                font-size: 1.5rem;
+                font-weight: bold;
+                padding-bottom: 15px;
+            }
+        }
+    }
 }

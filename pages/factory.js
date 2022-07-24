@@ -1,18 +1,79 @@
 import Head from "next/head";
-import styles from "./factory.module.scss";
 import Image from "next/image";
+import Link from "next/link";
+import styles from "./factory.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSquarePlus } from "@fortawesome/free-regular-svg-icons";
-// import Button from "react-bootstrap/Button";
+import { faUpRightAndDownLeftFromCenter } from "@fortawesome/free-solid-svg-icons";
+
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Popover from "react-bootstrap/Popover";
 import { useWindowSize } from "../hooks/useWindowDimensions.js";
+import { useState, useEffect } from "react";
+
+import PhotoSwipeLightbox from "photoswipe/lightbox";
 
 export default function Factory() {
   const size = useWindowSize();
-  const onServiceClick = () => {
-    console.log(123);
-  };
+
+  const [equipment, setEquipment] = useState([
+    {
+      name: "落布機",
+      description:
+        "將要進行染色或上膠的布料作前整理，適用於針織圓筒布、毛巾布、平織等胚布。",
+    },
+    {
+      name: "高溫染色機",
+      description:
+        "通過染料或顏料和紡織物發生物理或物理化學的結合，浸入一定溫度的染料水溶液中，使紡織物獲得鮮豔、均勻和堅牢色澤的加工過程；除了染色，還可進行精煉，其目的為去除胚布本身的雜質、油脂等等，以提升染色的品質。",
+    },
+    {
+      name: "烘乾機",
+      description: "靠熱能或電磁能，使溼織物內的水分蒸發成爲乾燥的織物。",
+    },
+    {
+      name: "蒸箱",
+      description:
+        "使織物在不同溫溼度條件下完成染料、化學品對纖維的滲透、反應和色牢度。",
+    },
+    {
+      name: "打樣室",
+      description:
+        "根據客戶的色樣要求，確定原料及染色配比，安排不同的染色組合，進行小樣打色。",
+    },
+    {
+      name: "定型機",
+      description:
+        "用來穩定布料的大小、顏色及縮水程度。其中又分為前定和成定；前定是在染布後先將部分特殊布種做一次定型，具有彈性的布料，則需要較多次的定型，才能維持其彈性及品質；成定則是染布後的最終定型，這個程序對每一匹布料都是必需的，布料在染色或者烘乾之後，預防產生縮水、扭曲、伸縮度不佳等情形。",
+    },
+    {
+      name: "印花機",
+      description:
+        "利用鏤空花紋的圓筒狀鎳皮篩網，按一定順序安裝在循環運行的橡膠導帶上方，並與導帶同步轉動。印花時，色漿輸入網內，貯留在網底，圓網隨導帶轉動時，緊壓在網底的刮刀與花網發生相對刮壓，色漿透過網上花紋到達織物表面。",
+    },
+    {
+      name: "包裝機",
+      description:
+        "以粗紙管為中心，將一大匹布慢慢的捆，捆成差不多等重量的成布，裹上外包裝，等待出貨。",
+    },
+  ]);
+
+  useEffect(() => {
+    let lightbox;
+    equipment.forEach((e) => {
+      lightbox = new PhotoSwipeLightbox({
+        gallery: `#equipment-item-${e.name}`,
+        children: "a",
+        pswpModule: () => import("photoswipe"),
+      });
+      lightbox.init();
+    });
+
+    return () => {
+      lightbox.destroy();
+      lightbox = null;
+    };
+  }, []);
 
   return (
     <div className={`container`}>
@@ -52,13 +113,13 @@ export default function Factory() {
 
       <div className={styles.banner}>
         <div className={styles.desc}>
-          <h3>廠區介紹</h3>
+          <h2>廠區介紹</h2>
         </div>
       </div>
 
       <main>
         <div className={styles.title} style={{ marginTop: 33 + "px" }}>
-          服務項目
+          <h3>服務項目</h3>
         </div>
 
         <div className={`${styles.section} services`}>
@@ -93,7 +154,7 @@ export default function Factory() {
               </Popover>
             }
           >
-            <div onClick={() => onServiceClick()}>
+            <div>
               <Image
                 src="/竑澤服務項目-44.png"
                 alt="缸染 Dyeing"
@@ -182,7 +243,7 @@ export default function Factory() {
               </Popover>
             }
           >
-            <div onClick={() => onServiceClick()}>
+            <div>
               <Image
                 src="/竑澤服務項目-46.png"
                 alt="印花 Printing"
@@ -216,7 +277,7 @@ export default function Factory() {
                     color: "#3A6A9A",
                   }}
                 >
-                  <table width={'300px'}>
+                  <table width={"300px"}>
                     <tr>
                       <td>撥水</td>
                       <td>Water-Repellent Finishing</td>
@@ -250,7 +311,7 @@ export default function Factory() {
               </Popover>
             }
           >
-            <div onClick={() => onServiceClick()}>
+            <div>
               <Image
                 src="/竑澤服務項目-45.png"
                 alt="定型 Setting"
@@ -298,7 +359,7 @@ export default function Factory() {
               </Popover>
             }
           >
-            <div onClick={() => onServiceClick()}>
+            <div>
               <Image
                 src="/竑澤服務項目-47.png"
                 alt="後整理 Finishing"
@@ -320,9 +381,83 @@ export default function Factory() {
           </OverlayTrigger>
         </div>
         <div className={styles.title} style={{ marginTop: 33 + "px" }}>
-          設備介紹
+          <h3>設備介紹</h3>
         </div>
-        <div className={styles.section}></div>
+
+        <div className={`${styles.section} equipment`} id="equipment">
+          {equipment.map((item) => {
+            return (
+              <div
+                key={item.name}
+                className="equipment-item"
+                id={`equipment-item-${item.name}`}
+              >
+                <Link href={""}>
+                  <a
+                    href={`/compress/${item.name}-1.${"jpg" || "png"}`}
+                    data-pswp-width={1200}
+                    data-pswp-height={800}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <div className="image">
+                      <Image
+                        src={`/compress/${item.name}-1.${"jpg" || "png"}`}
+                        layout="fill"
+                      ></Image>
+                      <FontAwesomeIcon
+                        icon={faUpRightAndDownLeftFromCenter}
+                        style={{
+                          marginLeft: "auto",
+                          color: "rgb(221 221 221)",
+                          zIndex: 12,
+                          position: "absolute",
+                          top: "15px",
+                          right: "15px",
+                        }}
+                        size="2x"
+                      />
+                    </div>
+                  </a>
+                </Link>
+
+                <div className="text">
+                  <h3>{item.name}</h3>
+                  <span>{item.description}</span>
+                </div>
+
+                <Link href={""} style={{ visibility: "hidden" }}>
+                  <a
+                    href={`/compress/${item.name}-2.${"jpg" || "png"}`}
+                    data-pswp-width={1200}
+                    data-pswp-height={800}
+                    target="_blank"
+                    rel="noreferrer"
+                    style={{ visibility: "hidden" }}
+                  >
+                    <div className="image" style={{ visibility: "hidden" }}>
+                      <Image
+                        src={`/compress/${item.name}-2.${"jpg" || "png"}`}
+                        layout="fill"
+                      ></Image>
+                      <FontAwesomeIcon
+                        icon={faUpRightAndDownLeftFromCenter}
+                        style={{
+                          marginLeft: "auto",
+                          color: "rgb(221 221 221)",
+                          position: "absolute",
+                          top: "15px",
+                          right: "15px",
+                        }}
+                        size="2x"
+                      />
+                    </div>
+                  </a>
+                </Link>
+              </div>
+            );
+          })}
+        </div>
       </main>
     </div>
   );
