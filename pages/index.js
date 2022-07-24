@@ -82,13 +82,10 @@ export default function Home() {
     },
   ]);
 
-  // const [width, setWidth] = useState();
-  const [height, setHeight] = useState(0);
+  const [height, setHeight] = useState(265);
 
   // This function calculates width and height of the list
   const getListSize = () => {
-    // const newWidth = swiperSlides.current.clientWidth;
-    // setWidth(newWidth);
     if (swiperSlides.current) {
       const newHeight = swiperSlides.current.clientHeight;
       setHeight(newHeight);
@@ -98,7 +95,7 @@ export default function Home() {
   // Get 'width' and 'height' after the initial render and every time the list changes
   useEffect(() => {
     getListSize();
-  }, [swiperSlides]);
+  }, [swiperSlides.current]);
 
   // Update 'width' and 'height' when the window resizes
   useEffect(() => {
