@@ -6,6 +6,8 @@ import '../styles/navbar.scss'
 import '../styles/header.scss'
 import '../styles/products.scss'
 import '../styles/utils.scss'
+import '../styles/factory.scss'
+import '../styles/popover.scss'
 
 import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
