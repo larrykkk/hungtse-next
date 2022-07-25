@@ -415,7 +415,6 @@ export default function Factory() {
                         style={{
                           marginLeft: "auto",
                           color: "rgb(221 221 221)",
-                          zIndex: 12,
                           position: "absolute",
                           top: "15px",
                           right: "15px",
