@@ -24,29 +24,22 @@ export default function Home() {
 
   const [slides, setSlides] = useState([
     {
-      id: 1,
-      img: "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-      title: "染色",
+      title: "成衣",
     },
     {
-      id: 2,
-      img: "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-      title: "特殊印花",
+      title: "家飾",
     },
     {
-      id: 3,
-      img: "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-      title: "醫療",
+      title: "浴袍",
     },
     {
-      id: 4,
-      img: "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-      title: "寢具、成衣",
-    },
-    {
-      id: 5,
-      img: "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
       title: "迷彩",
+    },
+    {
+      title: "寢具",
+    },
+    {
+      title: "醫療",
     },
   ]);
 
@@ -219,13 +212,13 @@ export default function Home() {
                 {slides.map((item) => {
                   return (
                     <SwiperSlide
-                      key={item.id}
-                      data-id={item.id}
+                      key={item.title}
+                      data-id={item.title}
                       style={{ height: "265px" }}
                       ref={swiperSlides}
                     >
                       <div>
-                        <Image src={item.img} alt={item.title} layout="fill" />
+                        <Image src={`${basePath}/image/comp3/${item.title}-總覽.jpg`} alt={item.title} layout="fill" />
                       </div>
                       <span className={styles.swiperDesc}>{item.title}</span>
                     </SwiperSlide>
