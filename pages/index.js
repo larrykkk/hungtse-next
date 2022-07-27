@@ -245,8 +245,7 @@ export default function Home() {
                   <div className={styles["mobile-products"]} key={item.id}>
                     <div style={{ marginBottom: "12px" }}>
                       <Image
-                        src={item.img}
-                        alt={item.title}
+                        src={`${basePath}/image/comp3/${item.title}-總覽.jpg`} alt={item.title}
                         width={300}
                         height={"100%"}
                       />
