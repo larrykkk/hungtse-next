@@ -11,6 +11,12 @@
   // background-image: url('/_123282362_hi042879001.jpg');
   background-repeat: repeat;
   background-position: center;
+  // z-index: -1;
+  // position: fixed;
+  // height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  z-index: -1;
 }
 
 .desc {
@@ -30,6 +36,14 @@
   text-align: center;
   font-size: 1rem;
   text-align: left;
+
+  // margin: 0;
+  // font-size: 2rem;
+  // line-height: 3rem;
+  // text-align: center;
+  // padding-top: 40vh;
+  text-shadow: 1px 1px 1px #3c5c5e;
+  z-index: 1;
 }
 
 .desc h3 {

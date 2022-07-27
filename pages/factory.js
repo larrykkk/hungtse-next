@@ -14,6 +14,10 @@ import { useState, useEffect } from "react";
 import PhotoSwipeLightbox from "photoswipe/lightbox";
 
 export default function Factory() {
+  const isProd = process.env.NODE_ENV === "production";
+  const basePath = isProd ? "/hungtse-next" : "";
+  const basePath2 = isProd ? "/hungtse-next" : "";
+
   const size = useWindowSize();
 
   const [equipment, setEquipment] = useState([
@@ -113,10 +117,17 @@ export default function Factory() {
 
       <div
         className={styles.banner}
-        style={{
-          backgroundImage: `url(/_123282362_hi042879001.jpg)`,
-        }}
+        // style={{
+        //   backgroundImage: `url(/_123282362_hi042879001.jpg)`,
+        // }}
       >
+        <Image
+          src={basePath + "/image/_123282362_hi042879001.jpg"}
+          alt="banner"
+          layout="fill"
+          objectFit="cover"
+          quality={100}
+        />
         <div className={styles.desc}>
           <h2>廠區介紹</h2>
         </div>
@@ -161,7 +172,7 @@ export default function Factory() {
           >
             <div>
               <Image
-                src="/竑澤服務項目-44.png"
+                src={basePath + "/image/竑澤服務項目-44.png"}
                 alt="缸染 Dyeing"
                 width={"150px"}
                 height={"150px"}
@@ -250,7 +261,7 @@ export default function Factory() {
           >
             <div>
               <Image
-                src="/竑澤服務項目-46.png"
+                src={basePath + "/image/竑澤服務項目-46.png"}
                 alt="印花 Printing"
                 width={"150px"}
                 height={"150px"}
@@ -318,7 +329,7 @@ export default function Factory() {
           >
             <div>
               <Image
-                src="/竑澤服務項目-45.png"
+                src={basePath + "/image/竑澤服務項目-45.png"}
                 alt="定型 Setting"
                 width={"150px"}
                 height={"150px"}
@@ -366,7 +377,7 @@ export default function Factory() {
           >
             <div>
               <Image
-                src="/竑澤服務項目-47.png"
+                src={basePath + "/image/竑澤服務項目-47.png"}
                 alt="後整理 Finishing"
                 width={"150px"}
                 height={"150px"}
@@ -399,7 +410,7 @@ export default function Factory() {
               >
                 <Link href={""}>
                   <a
-                    href={`/${item.name}-1.${"jpg" || "png"}`}
+                    href={`${basePath2}/image/${item.name}-1.${"jpg" || "png"}`}
                     data-pswp-width={1200}
                     data-pswp-height={800}
                     target="_blank"
@@ -407,7 +418,9 @@ export default function Factory() {
                   >
                     <div className="image">
                       <Image
-                        src={`/comp3/${item.name}-1.${"jpg" || "png"}`}
+                        src={`${basePath}/image/comp3/${item.name}-1.${
+                          "jpg" || "png"
+                        }`}
                         layout="fill"
                       ></Image>
                       <FontAwesomeIcon
@@ -432,7 +445,7 @@ export default function Factory() {
 
                 <Link href={""} style={{ visibility: "hidden" }}>
                   <a
-                    href={`/${item.name}-2.${"jpg" || "png"}`}
+                    href={`${basePath2}/image/${item.name}-2.${"jpg" || "png"}`}
                     data-pswp-width={1200}
                     data-pswp-height={800}
                     target="_blank"
@@ -441,7 +454,9 @@ export default function Factory() {
                   >
                     <div className="image" style={{ visibility: "hidden" }}>
                       <Image
-                        src={`/comp3/${item.name}-2.${"jpg" || "png"}`}
+                        src={`${basePath}/image/comp3/${item.name}-2.${
+                          "jpg" || "png"
+                        }`}
                         layout="fill"
                       ></Image>
                       <FontAwesomeIcon
