@@ -7,7 +7,7 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     loader: "akamai",
-    path: "",
+    path: "/",
     domains: ["images.unsplash.com", "images.pexels.com"],
   },
 };

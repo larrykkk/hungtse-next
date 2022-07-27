@@ -2,10 +2,13 @@ import Image from "next/image";
 import styles from "./TheFooter.module.scss";
 
 export default function Footer() {
+  const isProd = process.env.NODE_ENV === 'production'
+  const basePath = isProd ? "/hungtse-next": ''
+
   return (
     <footer className={styles.footer}>
       <div className={styles.logo}>
-        <Image src="/竑澤單Logo-27.png" alt="logo" width={161} height={87} />
+        <Image src={basePath + "/image/竑澤單Logo-27.png"} alt="logo" width={161} height={87} />
         <br />
         <h1>竑澤實業股份有限公司</h1>
       </div>
@@ -23,14 +26,14 @@ export default function Footer() {
       </div>
       <div className={styles["certification-slogan"]}>
         <Image
-          src="/GRS-Logo-白字.png"
+          src={basePath + "/image/GRS-Logo-白字.png"}
           alt="GRS-Logo"
           width={221}
           height={'100%'}
           className={styles.img1}
         />
         <Image
-          src="/iso9001.png"
+          src={basePath + "/image/iso9001.png"}
           alt="GRS-Logo"
           width={105}
           height={'100%'}

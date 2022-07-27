@@ -8,6 +8,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown, faXmark } from "@fortawesome/free-solid-svg-icons";
 
 export default function Header() {
+  const isProd = process.env.NODE_ENV === "production";
+  const basePath = isProd ? "/hungtse-next" : "";
+
   const router = useRouter();
   const myHeader = useRef(null);
   const [pathname, setPathname] = useState(router.pathname);
@@ -169,14 +172,14 @@ export default function Header() {
         <div ref={myHeader} className={`${styles["mobile-header"]}`}>
           <Image
             className={styles["m-logo"]}
-            src="/竑澤單Logo-27.png"
+            src={basePath + "/image/竑澤單Logo-27.png"}
             width={62}
             height={34}
             alt="logo"
           />
           <Image
             className={styles["m-site-name"]}
-            src="/竑澤 橫式文字-38.png"
+            src={basePath + "/image/竑澤 橫式文字-38.png"}
             width={188}
             height={20}
             alt="竑澤 橫式文字"
@@ -208,7 +211,12 @@ export default function Header() {
         className={`${styles.header} header ${isSticky ? styles.sticky : ""}`}
       >
         <div>
-          <Image src="/竑澤單Logo-27.png" alt="logo" width={95} height={52} />
+          <Image
+            src={basePath + "/image/竑澤單Logo-27.png"}
+            alt="logo"
+            width={95}
+            height={52}
+          />
           <Menu />
         </div>
       </div>

@@ -16,6 +16,9 @@ import { Navigation, Pagination } from "swiper";
 import { useWindowSize } from "../hooks/useWindowDimensions.js";
 
 export default function Home() {
+  const isProd = process.env.NODE_ENV === "production";
+  const basePath = isProd ? "/hungtse-next" : "";
+
   const size = useWindowSize();
   const swiperSlides = useRef();
 
@@ -112,9 +115,19 @@ export default function Home() {
         />
       </Head>
 
-      <div className={styles.banner} style={{
-          backgroundImage: `url(/_123282362_hi042879001.jpg)`,
-        }}>
+      <div
+        className={styles.banner}
+        // style={{
+        //   backgroundImage: `url(/_123282362_hi042879001.jpg)`,
+        // }}
+      >
+        <Image
+          src={basePath + "/image/_123282362_hi042879001.jpg"}
+          alt="banner"
+          layout="fill"
+          objectFit="cover"
+          quality={100}
+        />
         <div className={styles.desc}>
           <h3>品質第一，堅持做到最好</h3>
           <h2 style={{ marginTop: "20px" }}>
@@ -133,7 +146,7 @@ export default function Home() {
           <div className={`${styles.content} ${styles.advantage}`}>
             <div>
               <Image
-                src="/機動性高.png"
+                src={basePath + "/image/機動性高.png"}
                 alt="機動性高 icon"
                 width={"100%"}
                 height={"100%"}
@@ -142,7 +155,7 @@ export default function Home() {
             </div>
             <div>
               <Image
-                src="/品質穩定.png"
+                src={`${basePath}/image/品質穩定.png`}
                 alt="品質穩定 icon"
                 width={"100%"}
                 height={"100%"}
@@ -151,7 +164,7 @@ export default function Home() {
             </div>
             <div>
               <Image
-                src="/交貨守時.png"
+                src={`${basePath}/image/交貨守時.png`}
                 alt="交貨守時 icon"
                 width={"100%"}
                 height={"100%"}
@@ -160,7 +173,7 @@ export default function Home() {
             </div>
             <div>
               <Image
-                src="/服務多元.png"
+                src={basePath + "/image/服務多元.png"}
                 alt="服務多元 icon"
                 width={"100%"}
                 height={"100%"}
@@ -169,7 +182,7 @@ export default function Home() {
             </div>
             <div>
               <Image
-                src="/價格合理.png"
+                src={basePath + "/image/價格合理.png"}
                 alt="價格合理 icon"
                 width={"100%"}
                 height={"100%"}
@@ -177,7 +190,7 @@ export default function Home() {
               <span>價格合理</span>
             </div>
           </div>
-          <Link href="/about">
+          <Link href="/image/about">
             <button className={styles.button}>關於竑澤</button>
           </Link>
         </div>
@@ -292,7 +305,7 @@ export default function Home() {
                     >
                       <div>
                         <Image
-                          src={`/comp3/${item.name}-1.jpg`}
+                          src={`${basePath}/image/comp3/${item.name}-1.jpg`}
                           alt={item.name}
                           layout="fill"
                         />
@@ -322,7 +335,7 @@ export default function Home() {
                   <div className={styles["mobile-equipment"]} key={item.id}>
                     <div style={{ marginBottom: "12px" }}>
                       <Image
-                        src={`/${item.name}-1.jpg`}
+                        src={`${basePath}/image/${item.name}-1.jpg`}
                         alt={item.name}
                         width={300}
                         height={"100%"}
