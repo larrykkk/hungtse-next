@@ -2,6 +2,7 @@
   @media screen and (max-width: 767px) {
     padding: var(--mobile-padding);
     margin-top: 70px;
+    max-width: unset !important;
   }
 
   display: flex;
@@ -25,6 +26,18 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+  }
+
+  @media screen and (min-width: 768px) {
+    max-width: var(--global-width-4);
+  }
+
+  @media screen and (min-width: 960px) {
+    max-width: var(--global-width-3);
+  }
+
+  @media screen and (min-width: 1128px) {
+    max-width: var(--global-width-2);
   }
 
   margin: 0 auto;
@@ -94,7 +107,7 @@
   margin-bottom: 70px;
 }
 
-.content div {
+.content>div {
   @media screen and (max-width: 767px) {
     margin: 10px 8px;
     font-size: 1.25rem;
@@ -124,6 +137,9 @@
     flex-wrap: wrap;
     justify-content: center;
   }
+
+  flex-wrap: wrap;
+  max-width: 1200px;
 }
 
 .advantage div {
@@ -131,8 +147,18 @@
 }
 
 .advantage div span {
-  // position: relative;
   margin-top: 30px;
+}
+
+.advantage-img {
+  @media screen and (max-width: 767px) {
+    width: 120px;
+    height: 120px;
+  }
+
+  position: relative;
+  width: 200px;
+  height: 200px;
 }
 
 .button {
@@ -165,6 +191,7 @@
 }
 
 .mobile-products {
+  width: 100%;
   max-width: calc(50% - 8px * 2);
   text-align: center;
   margin: 8px;

@@ -1,14 +1,15 @@
 :root {
   --white-color: #fff;
-  --global-pc-width: 1200px;
   --text-blue-color-1: #062959;
   --text-blue-color-2: #343F52;
   --text-blue-color-3: #0D6EFD;
   --text-blue-color-4: #315084;
   --title-color: #062959;
   --global-bgcolor: #F2F8FB;
-
-
+  --global-pc-width: 1200px;
+  --global-width-2: 1128px;
+  --global-width-3: 960px;
+  --global-width-4: 767px;
 
   /* z-index */
   --header-z-index: 11;
@@ -31,7 +32,8 @@ html {
 }
 
 html {
-  scroll-padding-top: 90px; /* height of sticky header */
+  scroll-padding-top: 90px;
+  /* height of sticky header */
 }
 
 body {
@@ -48,7 +50,21 @@ body {
 main {
   @media screen and (max-width: 767px) {
     padding: var(--mobile-padding);
+    // max-width: unset !important;
   }
+
+  @media screen and (min-width: 768px) {
+    max-width: var(--global-width-4);
+  }
+
+  @media screen and (min-width: 960px) {
+    max-width: var(--global-width-3);
+  }
+
+  @media screen and (min-width: 1128px) {
+    max-width: var(--global-width-2);
+  }
+
   flex: 1;
   width: 100%;
   position: relative;

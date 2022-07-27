@@ -138,48 +138,53 @@ export default function Home() {
         <div className={styles.section}>
           <div className={`${styles.content} ${styles.advantage}`}>
             <div>
-              <Image
-                src={basePath + "/image/機動性高.png"}
-                alt="機動性高 icon"
-                width={"100%"}
-                height={"100%"}
-              />
+              <div className={styles["advantage-img"]}>
+                <Image
+                  src={basePath + "/image/機動性高.png"}
+                  alt="機動性高 icon"
+                  layout="fill"
+                />
+              </div>
               <span>機動性高</span>
             </div>
             <div>
-              <Image
-                src={`${basePath}/image/品質穩定.png`}
-                alt="品質穩定 icon"
-                width={"100%"}
-                height={"100%"}
-              />
+              <div className={styles["advantage-img"]}>
+                <Image
+                  src={`${basePath}/image/品質穩定.png`}
+                  alt="品質穩定 icon"
+                  layout="fill"
+                />
+              </div>
               <span>品質穩定</span>
             </div>
             <div>
-              <Image
-                src={`${basePath}/image/交貨守時.png`}
-                alt="交貨守時 icon"
-                width={"100%"}
-                height={"100%"}
-              />
+              <div className={styles["advantage-img"]}>
+                <Image
+                  src={`${basePath}/image/交貨守時.png`}
+                  alt="交貨守時 icon"
+                  layout="fill"
+                />
+              </div>
               <span>交貨守時</span>
             </div>
             <div>
-              <Image
-                src={basePath + "/image/服務多元.png"}
-                alt="服務多元 icon"
-                width={"100%"}
-                height={"100%"}
-              />
+              <div className={styles["advantage-img"]}>
+                <Image
+                  src={basePath + "/image/服務多元.png"}
+                  alt="服務多元 icon"
+                  layout="fill"
+                />
+              </div>
               <span>服務多元</span>
             </div>
             <div>
-              <Image
-                src={basePath + "/image/價格合理.png"}
-                alt="價格合理 icon"
-                width={"100%"}
-                height={"100%"}
-              />
+              <div className={styles["advantage-img"]}>
+                <Image
+                  src={basePath + "/image/價格合理.png"}
+                  alt="價格合理 icon"
+                  layout="fill"
+                />
+              </div>
               <span>價格合理</span>
             </div>
           </div>
@@ -264,7 +269,8 @@ export default function Home() {
                     <div
                       style={{
                         marginBottom: "12px",
-                        width: "300px",
+                        width: "100%",
+                        maxWidth: "300px",
                         height: "150px",
                         position: "relative",
                       }}
@@ -316,17 +322,23 @@ export default function Home() {
                     <SwiperSlide
                       key={item.id}
                       data-id={item.id}
-                      style={{ height: "265px" }}
                       ref={swiperSlides}
                     >
-                      <div>
+                      <div
+                        style={{
+                          width: "100%",
+                          maxWidth: "350px",
+                          height: "265px",
+                          position: "relative",
+                        }}
+                      >
                         <Image
                           src={`${basePath}/image/comp3/${item.name}-1.jpg`}
                           alt={item.name}
                           layout="fill"
                         />
                       </div>
-                      <span className={styles.swiperDesc}>{item.name}</span>
+                      <div className={styles.swiperDesc}>{item.name}</div>
                     </SwiperSlide>
                   );
                 })}
