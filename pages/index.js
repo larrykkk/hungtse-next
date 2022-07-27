@@ -265,7 +265,7 @@ export default function Home() {
             <div className={styles.products}>
               {slides.map((item) => {
                 return (
-                  <div className={styles["mobile-products"]} key={item.id}>
+                  <div className={styles["mobile-products"]} key={item.title}>
                     <div
                       style={{
                         marginBottom: "12px",
@@ -360,7 +360,10 @@ export default function Home() {
             <div className={`${styles.equipment} horizontal-scroll`}>
               {equipment.map((item) => {
                 return (
-                  <div className={styles["mobile-equipment"]} key={item.id}>
+                  <div
+                    className={styles["mobile-equipment"]}
+                    key={item.id}
+                  >
                     <div
                       style={{
                         marginBottom: "12px",
