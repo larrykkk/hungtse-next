@@ -54,27 +54,27 @@ export default function Home() {
     },
     {
       id: 3,
-      name: "落布機",
+      name: "烘乾機",
     },
     {
       id: 4,
-      name: "落布機",
+      name: "蒸箱",
     },
     {
       id: 5,
-      name: "落布機",
+      name: "打樣室",
     },
     {
       id: 6,
-      name: "落布機",
+      name: "定型機",
     },
     {
       id: 7,
-      name: "落布機",
+      name: "印花機",
     },
     {
       id: 8,
-      name: "落布機",
+      name: "包裝機",
     },
   ]);
 
@@ -203,6 +203,14 @@ export default function Home() {
                   nextEl: ".swiper-button-next",
                   prevEl: ".swiper-button-prev",
                 }}
+                breakpoints={{
+                  768: {
+                    slidesPerView: 2,
+                  },
+                  1024: {
+                    slidesPerView: 3,
+                  },
+                }}
                 loop={true}
                 modules={[Pagination, Navigation]}
                 className="mySwiper"
@@ -214,13 +222,23 @@ export default function Home() {
                     <SwiperSlide
                       key={item.title}
                       data-id={item.title}
-                      style={{ height: "265px" }}
                       ref={swiperSlides}
                     >
-                      <div>
-                        <Image src={`${basePath}/image/comp3/${item.title}-總覽.jpg`} alt={item.title} layout="fill" />
+                      <div
+                        style={{
+                          width: "100%",
+                          maxWidth: "350px",
+                          height: "265px",
+                          position: "relative",
+                        }}
+                      >
+                        <Image
+                          src={`${basePath}/image/comp3/${item.title}-總覽.jpg`}
+                          alt={item.title}
+                          layout="fill"
+                        />
                       </div>
-                      <span className={styles.swiperDesc}>{item.title}</span>
+                      <div className={styles.swiperDesc}>{item.title}</div>
                     </SwiperSlide>
                   );
                 })}
@@ -243,11 +261,18 @@ export default function Home() {
               {slides.map((item) => {
                 return (
                   <div className={styles["mobile-products"]} key={item.id}>
-                    <div style={{ marginBottom: "12px" }}>
+                    <div
+                      style={{
+                        marginBottom: "12px",
+                        width: "300px",
+                        height: "150px",
+                        position: "relative",
+                      }}
+                    >
                       <Image
-                        src={`${basePath}/image/comp3/${item.title}-總覽.jpg`} alt={item.title}
-                        width={300}
-                        height={"100%"}
+                        src={`${basePath}/image/comp3/${item.title}-總覽.jpg`}
+                        alt={item.title}
+                        layout="fill"
                       />
                     </div>
                     <span className={styles["mobile-products-desc"]}>
@@ -281,7 +306,6 @@ export default function Home() {
                   nextEl: ".swiper-button-next",
                   prevEl: ".swiper-button-prev",
                 }}
-                // loop={true}
                 modules={[Pagination, Navigation]}
                 className="mySwiper"
                 key={1}
@@ -325,12 +349,19 @@ export default function Home() {
               {equipment.map((item) => {
                 return (
                   <div className={styles["mobile-equipment"]} key={item.id}>
-                    <div style={{ marginBottom: "12px" }}>
+                    <div
+                      style={{
+                        marginBottom: "12px",
+                        position: "relative",
+                        width: "100%",
+                        maxWidth: "300p",
+                        height: "150px",
+                      }}
+                    >
                       <Image
-                        src={`${basePath}/image/${item.name}-1.jpg`}
+                        src={`${basePath}/image/comp3/${item.name}-1.jpg`}
                         alt={item.name}
-                        width={300}
-                        height={"100%"}
+                        layout="fill"
                       />
                     </div>
                     <span className={styles["mobile-equipment-desc"]}>
