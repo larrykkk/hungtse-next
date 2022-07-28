@@ -23,8 +23,16 @@
 }
 
 .m-site-name {
-    margin-left: 8px;
+    margin-left: 12px;
     height: 20px;
+}
+
+.siteName {
+    visibility: hidden;
+
+    @media screen and (min-width: 960px) {
+        visibility: visible;
+    }
 }
 
 .header {
