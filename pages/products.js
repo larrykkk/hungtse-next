@@ -7,6 +7,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 
 export default function Products() {
+  const isProd = process.env.NODE_ENV === "production";
+  const basePath = isProd ? "/hungtse-next" : "";
+
   const size = useWindowSize();
   const [selectd, setSelectd] = useState([]);
   const [choosed, setChoosed] = useState(false);
@@ -66,10 +69,17 @@ export default function Products() {
 
       <div
         className={styles.banner}
-        style={{
-          backgroundImage: `url(/_123282362_hi042879001.jpg)`,
-        }}
+        // style={{
+        //   backgroundImage: `url(/_123282362_hi042879001.jpg)`,
+        // }}
       >
+        <Image
+          src={basePath + "/image/_123282362_hi042879001.jpg"}
+          alt="banner"
+          layout="fill"
+          objectFit="cover"
+          quality={100}
+        />
         <div className={styles.desc}>
           <h3>產品項目</h3>
         </div>
