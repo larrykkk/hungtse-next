@@ -65,9 +65,12 @@ main {
     max-width: var(--global-width-2);
   }
 
+  @media screen and (min-width: 1200px) {
+    max-width: var(--global-pc-width);
+  }
+
   flex: 1;
   width: 100%;
   position: relative;
   margin: 0 auto;
-  max-width: var(--global-pc-width);
 }
