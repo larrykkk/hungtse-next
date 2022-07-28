@@ -91,7 +91,7 @@ export default function Products() {
         </div>
         <div className={styles.section}>
           <Image
-            src="/image/布種一覽-42.png"
+            src={basePath + "/image/布種一覽-42.png"}
             alt="布種一覽"
             width={1200}
             height={285}
@@ -169,7 +169,7 @@ export default function Products() {
                       <div className="product-type-Thumbnail">
                         <div className="product-type-Thumbnail-main">
                           <Image
-                            src={`/image/comp3/${item.name}-總覽.jpg`}
+                            src={`${basePath}/image/comp3/${item.name}-總覽.jpg`}
                             alt={`${item.name}-總覽`}
                             width={1145}
                             height={796}
@@ -186,7 +186,7 @@ export default function Products() {
                             return (
                               <div key={index}>
                                 <Image
-                                  src={`/image/comp3/${subItem}`}
+                                  src={`${basePath}/image/comp3/${subItem}`}
                                   alt=""
                                   layout="fill"
                                 />
@@ -216,7 +216,7 @@ export default function Products() {
                         >
                           <div className="horizontal-scroll-item">
                             <Image
-                              src={`/image/comp3/${item.name}-總覽.jpg`}
+                              src={`${basePath}/image/comp3/${item.name}-總覽.jpg`}
                               alt={`${item.name}-總覽`}
                               layout="fill"
                             />
@@ -229,7 +229,7 @@ export default function Products() {
                                 className="horizontal-scroll-item"
                               >
                                 <Image
-                                  src={`/image/comp3/${subItem}`}
+                                  src={`${basePath}/image/comp3/${subItem}`}
                                   alt=""
                                   layout="fill"
                                 />
