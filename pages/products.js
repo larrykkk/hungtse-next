@@ -19,51 +19,38 @@ export default function Products() {
     }
   };
 
-  const images = {
-    mainImage:
-      "https://images.pexels.com/photos/957024/forest-trees-perspective-bright-957024.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    otherImages: [
-      {
-        image:
-          "https://images.pexels.com/photos/1408221/pexels-photo-1408221.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1F",
-        name: "棉",
-      },
-      {
-        image:
-          "https://images.pexels.com/photos/1408221/pexels-photo-1408221.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1F",
-        name: "尼龍",
-      },
-      {
-        image:
-          "https://images.pexels.com/photos/1408221/pexels-photo-1408221.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1F",
-        name: "人造絲",
-      },
-    ],
-  };
   const productsType = [
     {
       name: "寢具",
-      ...images,
+      otherImages: [
+        "寢具-133X72C 40S.jpg",
+        "寢具-133X72C.jpg",
+        "寢具-190T_.jpg",
+      ],
     },
     {
       name: "浴袍",
-      ...images,
+      otherImages: ["浴袍-60_60C.jpg", "浴袍-96_72TC.jpg", "浴袍-R_.jpg"],
     },
     {
-      name: "傢飾",
-      ...images,
+      name: "家飾",
+      otherImages: ["家飾-75DT.jpg", "家飾-150_170TC.jpg", "家飾-R_.jpg"],
     },
     {
       name: "成衣",
-      ...images,
+      otherImages: ["成衣-針織1.jpg", "成衣-針織2.jpg", "成衣-剪花布.jpg"],
     },
     {
       name: "醫療",
-      ...images,
+      otherImages: [
+        "寢具-110_52TC.jpg",
+        "寢具-110_52TC(1).jpg",
+        "寢具-110x76TC.jpg",
+      ],
     },
     {
       name: "迷彩",
-      ...images,
+      otherImages: ["迷彩-75D.jpg", "迷彩-500D_N_.jpg", "迷彩-N_.jpg"],
     },
   ];
 
@@ -94,7 +81,7 @@ export default function Products() {
         </div>
         <div className={styles.section}>
           <Image
-            src="/布種一覽-42.png"
+            src="/image/布種一覽-42.png"
             alt="布種一覽"
             width={1200}
             height={285}
@@ -172,8 +159,8 @@ export default function Products() {
                       <div className="product-type-Thumbnail">
                         <div className="product-type-Thumbnail-main">
                           <Image
-                            src={item.mainImage}
-                            alt=""
+                            src={`/image/comp3/${item.name}-總覽.jpg`}
+                            alt={`${item.name}-總覽`}
                             width={1145}
                             height={796}
                           />
@@ -189,11 +176,10 @@ export default function Products() {
                             return (
                               <div key={index}>
                                 <Image
-                                  src={subItem.image}
+                                  src={`/image/comp3/${subItem}`}
                                   alt=""
                                   layout="fill"
                                 />
-                                <span>{subItem.name}</span>
                               </div>
                             );
                           })}
@@ -220,11 +206,10 @@ export default function Products() {
                         >
                           <div className="horizontal-scroll-item">
                             <Image
-                              src={item.mainImage}
-                              alt="產品主圖"
+                              src={`/image/comp3/${item.name}-總覽.jpg`}
+                              alt={`${item.name}-總覽`}
                               layout="fill"
                             />
-                            {/* <span>{subItem.name}</span> */}
                           </div>
 
                           {item.otherImages.map((subItem, index) => {
@@ -234,11 +219,10 @@ export default function Products() {
                                 className="horizontal-scroll-item"
                               >
                                 <Image
-                                  src={subItem.image}
+                                  src={`/image/comp3/${subItem}`}
                                   alt=""
                                   layout="fill"
                                 />
-                                <span>{subItem.name}</span>
                               </div>
                             );
                           })}
