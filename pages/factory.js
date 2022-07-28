@@ -410,7 +410,7 @@ export default function Factory() {
               >
                 <Link href={""}>
                   <a
-                    href={`${basePath2}/image/${item.name}-1.${"jpg" || "png"}`}
+                    href={`${basePath2}/image/comp3/${item.name}-1.${"jpg" || "png"}`}
                     data-pswp-width={1200}
                     data-pswp-height={800}
                     target="_blank"
@@ -445,7 +445,7 @@ export default function Factory() {
 
                 <Link href={""} style={{ visibility: "hidden" }}>
                   <a
-                    href={`${basePath2}/image/${item.name}-2.${"jpg" || "png"}`}
+                    href={`${basePath2}/image/comp3/${item.name}-2.${"jpg" || "png"}`}
                     data-pswp-width={1200}
                     data-pswp-height={800}
                     target="_blank"

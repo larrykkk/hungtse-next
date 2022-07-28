@@ -120,6 +120,7 @@ h3 {
         max-width: 385px;
         width: calc((100% - 40px) / 3);
         height: 480px;
+        // overflow: auto;
 
         @media screen and (max-width: 1024px) {
             width: calc((100% - 20px) / 2);
@@ -146,6 +147,8 @@ h3 {
         .text {
             padding: 20px 40px;
             text-align: center;
+            height: 230px;
+            overflow: auto;
 
             @media screen and (max-width: 767px) {
                 width: 100%;
