@@ -104,7 +104,8 @@ export default function Home() {
         <title>首頁 | 竑澤實業股份有限公司</title>
         <meta
           name="description"
-          content="竑澤實業成立於 81 年10 月，為中華民國經濟部核准公司，並於84 年開始營運，至今已超過25 年，我們擁有專業的一貫作業，堅持品質的良好，給顧客最實在的。"
+          content="
+          竑澤實業股份有限公司位於桃園市觀音區,為棉、合成化學纖維針織品等等材質的漂染、印花、整理加工廠 - 竑澤實業股份有限公司"
         />
       </Head>
 
@@ -368,10 +369,7 @@ export default function Home() {
             <div className={`${styles.equipment} horizontal-scroll`}>
               {equipment.map((item) => {
                 return (
-                  <div
-                    className={styles["mobile-equipment"]}
-                    key={item.id}
-                  >
+                  <div className={styles["mobile-equipment"]} key={item.id}>
                     <div
                       style={{
                         marginBottom: "12px",
