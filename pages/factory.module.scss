@@ -21,6 +21,18 @@
         justify-content: center;
     }
 
+    @media screen and (min-width: 768px) {
+        max-width: var(--global-width-4);
+    }
+
+    @media screen and (min-width: 960px) {
+        max-width: var(--global-width-3);
+    }
+
+    @media screen and (min-width: 1128px) {
+        max-width: var(--global-width-2);
+    }
+
     margin: 0 auto;
     width: 100%;
     max-width: var(--global-pc-width);
