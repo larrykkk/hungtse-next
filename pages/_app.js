@@ -28,7 +28,7 @@ function MyApp({ Component, pageProps }) {
         <link rel="icon" href={basePath + "/favicon.ico"} />
         <meta
           property="og:image"
-          content={`${basePath}/image/竑澤單Logo-27.png`}
+          content={`https://larrykkk.github.io/hungtse-next/image/竑澤單Logo-27.png`}
         />
       </Head>
       <Component {...pageProps} />
