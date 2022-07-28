@@ -9,15 +9,6 @@ import '../styles/utils.scss'
 import '../styles/factory.scss'
 import '../styles/popover.scss'
 
-// // import styles
-// import "lightgallery/css/lightgallery.css";
-// import "lightgallery/css/lg-zoom.css";
-// import "lightgallery/css/lg-thumbnail.css";
-
-// // If you want you can use SCSS instead of css
-// import "lightgallery/scss/lightgallery.scss";
-// import "lightgallery/scss/lg-zoom.scss";
-
 import 'photoswipe/style.css';
 
 import { config } from '@fortawesome/fontawesome-svg-core'
@@ -28,10 +19,13 @@ import Layout from '../components/layout'
 import Head from "next/head";
 
 function MyApp({ Component, pageProps }) {
+  const isProd = process.env.NODE_ENV === "production";
+  const basePath = isProd ? "/hungtse-next" : "";
+
   return (
     <Layout>
       <Head>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href={basePath + "/favicon.ico"} />
       </Head>
       <Component {...pageProps} />
     </Layout>
