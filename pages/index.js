@@ -205,8 +205,8 @@ export default function Home() {
                   clickable: true,
                 }}
                 navigation={{
-                  nextEl: ".swiper-button-next",
-                  prevEl: ".swiper-button-prev",
+                  nextEl: ".swiper-button-next.test1",
+                  prevEl: ".swiper-button-prev.test1",
                 }}
                 breakpoints={{
                   768: {
@@ -218,7 +218,7 @@ export default function Home() {
                 }}
                 loop={true}
                 modules={[Pagination, Navigation]}
-                className="mySwiper"
+                className="mySwiper1"
                 key={1}
                 style={{ marginBottom: "70px" }}
               >
@@ -249,13 +249,13 @@ export default function Home() {
                 })}
               </Swiper>
               <div
-                className="swiper-button-prev"
+                className="swiper-button-prev test1"
                 style={{
                   top: `${height / 2}px`,
                 }}
               ></div>
               <div
-                className="swiper-button-next"
+                className="swiper-button-next test1"
                 style={{
                   top: `${height / 2}px`,
                 }}
@@ -309,12 +309,20 @@ export default function Home() {
                   clickable: true,
                 }}
                 navigation={{
-                  nextEl: ".swiper-button-next",
-                  prevEl: ".swiper-button-prev",
+                  nextEl: ".swiper-button-next.test2",
+                  prevEl: ".swiper-button-prev.test2",
+                }}
+                breakpoints={{
+                  768: {
+                    slidesPerView: 2,
+                  },
+                  1024: {
+                    slidesPerView: 3,
+                  },
                 }}
                 modules={[Pagination, Navigation]}
-                className="mySwiper"
-                key={1}
+                className="mySwiper2"
+                key={2}
                 style={{ marginBottom: "70px" }}
               >
                 {equipment.map((item) => {
@@ -344,13 +352,13 @@ export default function Home() {
                 })}
               </Swiper>
               <div
-                className="swiper-button-prev"
+                className="swiper-button-prev test2"
                 style={{
                   top: `${height / 2}px`,
                 }}
               ></div>
               <div
-                className="swiper-button-next"
+                className="swiper-button-next test2"
                 style={{
                   top: `${height / 2}px`,
                 }}
