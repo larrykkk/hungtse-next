@@ -12,7 +12,8 @@
 
 ## Tech stack
 
-- Nextjs
+- React
+- Next.js
 - Github Actions
 
 ## Setup
