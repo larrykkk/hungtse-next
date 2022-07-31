@@ -4,17 +4,37 @@
 
 ![image](https://user-images.githubusercontent.com/25131952/181602885-d64903f7-b80f-4cc9-9e8e-36d7d988d033.png)
 
-## 連結
+## Link
 [DEMO](https://larrykkk.github.io/hungtse-next/)
 
-## 狀態
+## Project status
 進行中...
 
-## 使用的技術
+## Tech stack
 
 - Nextjs
 - Github Actions
 
-## 專案建置
+## Setup
 
-WIP
+### Development
+
+```
+npm i
+npm run dev
+```
+
+### Deployment
+
+```
+npm install pm2 -g
+npm i
+npm run build
+pm2 start
+```
+
+### Check pm2 process 
+
+```
+pm2 ls
+```
