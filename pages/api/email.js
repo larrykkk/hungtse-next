@@ -1,6 +1,6 @@
 const nodemailer = require("nodemailer");
 
-export default function handler(req, res) {
+export default async function handler(req, res) {
   var email = req.body.email;
   if (
     email &&
@@ -11,8 +11,13 @@ export default function handler(req, res) {
     return;
   }
 
-  main(email).catch(console.error);
-  res.send("ok");
+  var isError = false;
+  await main(email).catch((err) => {
+    isError = true;
+    console.error(err);
+  });
+
+  res.send(isError ? "error" : "success");
 }
 
 async function main(email) {
