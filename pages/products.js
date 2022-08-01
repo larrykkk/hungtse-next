@@ -74,7 +74,7 @@ export default function Products() {
         // }}
       >
         <Image
-          src={basePath + "/image/_123282362_hi042879001.jpg"}
+          src={basePath + "/image/comp3/2 產品項目.png"}
           alt="banner"
           layout="fill"
           objectFit="cover"

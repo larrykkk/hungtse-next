@@ -1,6 +1,11 @@
 import Head from "next/head";
+import styles from "./about.module.scss";
+import Image from "next/image";
 
 export default function About() {
+  const isProd = process.env.NODE_ENV === "production";
+  const basePath = isProd ? "/hungtse-next" : "";
+
   return (
     <div className={`container`}>
       <Head>
@@ -13,6 +18,19 @@ export default function About() {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      <div className={styles.banner}>
+        <Image
+          src={basePath + "/image/comp3/4 關於竑澤.png"}
+          alt="banner"
+          layout="fill"
+          objectFit="cover"
+          quality={100}
+        />
+        <div className={styles.desc}>
+          <h2>廠區介紹</h2>
+        </div>
+      </div>
 
       <main></main>
     </div>

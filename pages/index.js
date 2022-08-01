@@ -116,7 +116,7 @@ export default function Home() {
         // }}
       >
         <Image
-          src={basePath + "/image/_123282362_hi042879001.jpg"}
+          src={basePath + "/image/comp3/1 首頁.png"}
           alt="banner"
           layout="fill"
           objectFit="cover"

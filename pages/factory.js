@@ -122,7 +122,7 @@ export default function Factory() {
         // }}
       >
         <Image
-          src={basePath + "/image/_123282362_hi042879001.jpg"}
+          src={basePath + "/image/comp3/3 廠區介紹.png"}
           alt="banner"
           layout="fill"
           objectFit="cover"
