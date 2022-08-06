@@ -170,20 +170,24 @@ export default function Header() {
     return (
       <>
         <div ref={myHeader} className={`${styles["mobile-header"]}`}>
-          <Image
-            className={styles["m-logo"]}
-            src={basePath + "/image/竑澤單Logo-27.png"}
-            width={62}
-            height={34}
-            alt="logo"
-          />
-          <Image
-            className={styles["m-site-name"]}
-            src={basePath + "/image/竑澤 橫式文字-38.png"}
-            width={188}
-            height={20}
-            alt="竑澤實業股份有限公司"
-          />
+          <Link href="/">
+            <a style={{ display: "inherit", alignItems: "inherit" }}>
+              <Image
+                className={styles["m-logo"]}
+                src={basePath + "/image/竑澤單Logo-27.png"}
+                width={62}
+                height={34}
+                alt="logo"
+              />
+              <Image
+                className={styles["m-site-name"]}
+                src={basePath + "/image/竑澤 橫式文字-38.png"}
+                width={188}
+                height={20}
+                alt="竑澤實業股份有限公司"
+              />
+            </a>
+          </Link>
 
           <button
             style={{
@@ -212,35 +216,39 @@ export default function Header() {
       >
         <div>
           <div style={{ display: "flex", alignItems: "center" }}>
-            <Image
-              src={basePath + "/image/竑澤單Logo-27.png"}
-              alt="logo"
-              width={95}
-              height={52}
-            />
-            <div
-              style={{
-                width: "220px",
-                height: "24px",
-                position: "relative",
-                marginLeft: "10px",
-              }}
-              className={styles.siteName}
-            >
-              {isSticky ? (
+            <Link href="/">
+              <a style={{ display: "inherit", alignItems: "inherit" }}>
                 <Image
-                  src={basePath + "/image/竑澤 橫式文字2-39.png"}
-                  alt="竑澤實業股份有限公司"
-                  layout="fill"
+                  src={basePath + "/image/竑澤單Logo-27.png"}
+                  alt="logo"
+                  width={95}
+                  height={52}
                 />
-              ) : (
-                <Image
-                  src={basePath + "/image/竑澤 橫式文字-38.png"}
-                  alt="竑澤實業股份有限公司"
-                  layout="fill"
-                />
-              )}
-            </div>
+                <div
+                  style={{
+                    width: "225px",
+                    height: "24px",
+                    position: "relative",
+                    marginLeft: "10px",
+                  }}
+                  className={styles.siteName}
+                >
+                  {isSticky ? (
+                    <Image
+                      src={basePath + "/image/竑澤 橫式文字2-39.png"}
+                      alt="竑澤實業股份有限公司"
+                      layout="fill"
+                    />
+                  ) : (
+                    <Image
+                      src={basePath + "/image/竑澤 橫式文字-38.png"}
+                      alt="竑澤實業股份有限公司"
+                      layout="fill"
+                    />
+                  )}
+                </div>
+              </a>
+            </Link>
           </div>
           <Menu />
         </div>
