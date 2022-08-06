@@ -5,6 +5,7 @@ import "../styles/breakpoints.css";
 import "../styles/navbar.scss";
 import "../styles/header.scss";
 import "../styles/products.scss";
+import "../styles/about.scss";
 import "../styles/utils.scss";
 import "../styles/factory.scss";
 import "../styles/popover.scss";
