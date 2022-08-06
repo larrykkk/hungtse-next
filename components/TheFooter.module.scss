@@ -34,7 +34,6 @@
 
         div+div {
             margin-top: 30px;
-            margin-left: 0px;
         }
 
         @media screen and (min-width: 768px) {
@@ -44,6 +43,7 @@
             div+div {
                 // margin-left: 38px;
                 margin-top: 0px;
+                margin-left: 35px;
             }
         }
 
@@ -52,7 +52,8 @@
     }
 
     .certification-slogan {
-        margin-top: 40px;
+        display: flex;
+        align-items: center;
         text-align: center;
 
 
@@ -70,7 +71,6 @@
 
 .slogen {
     font-size: 1.5rem;
-    margin-top: 20px;
     font-weight: normal;
 
     @media screen and (max-width: 767px) {

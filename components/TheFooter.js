@@ -23,30 +23,18 @@ export default function Footer() {
           23 KUNG-YEH 2 ROAD KUAN IN INDUSTRIAL ZONE
           <br /> TAO-YUAN. TAIWAN. R.O.C.
         </div>
-        <div>
+        <div d>
           TEL／(03)4836636~8 <br />
           FAX／(03)4836136 <br />
-          EMAIL／hiprint.ht1@msa.hinet.net
+          EMAIL／HungTse84@gmail.com
         </div>
       </div>
       <div className={styles["certification-slogan"]}>
-        <div>
-          <Image
-            src={basePath + "/image/GRS-Logo-白字.png"}
-            alt="GRS-Logo"
-            width={221}
-            height={"100%"}
-            className={styles.img1}
-          />
-          <Image
-            src={basePath + "/image/iso9001.png"}
-            alt="GRS-Logo"
-            width={105}
-            height={"100%"}
-            className={styles.img2}
-          />
+        <div
+          style={{ height: "72px", display: "flex", alignItems: "flex-end" }}
+        >
+          <span className={styles.slogen}>技術傳承、品質保證、永續經營</span>
         </div>
-        <h2 className={styles.slogen}>技術傳承、品質保證、永續經營</h2>
       </div>
     </footer>
   );
