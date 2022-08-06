@@ -24,22 +24,24 @@ export default function Home() {
 
   const [slides, setSlides] = useState([
     {
-      title: "成衣",
+      title: "染色",
+      name: "寢具-133X72C 40S",
     },
     {
-      title: "家飾",
-    },
-    {
-      title: "浴袍",
-    },
-    {
-      title: "迷彩",
-    },
-    {
-      title: "寢具",
+      title: "特殊印花",
+      name: "寢具-133X72C",
     },
     {
       title: "醫療",
+      name: "醫療-總覽",
+    },
+    {
+      title: "寢具、成衣",
+      name: "寢具-總覽",
+    },
+    {
+      title: "迷彩",
+      name: "迷彩-總覽",
     },
   ]);
 
@@ -239,7 +241,7 @@ export default function Home() {
                         }}
                       >
                         <Image
-                          src={`${basePath}/image/comp3/${item.title}-總覽.jpg`}
+                          src={`${basePath}/image/comp3/${item.name}.jpg`}
                           alt={item.title}
                           layout="fill"
                         />
@@ -277,7 +279,7 @@ export default function Home() {
                       }}
                     >
                       <Image
-                        src={`${basePath}/image/comp3/${item.title}-總覽.jpg`}
+                        src={`${basePath}/image/comp3/${item.name}.jpg`}
                         alt={item.title}
                         layout="fill"
                       />
