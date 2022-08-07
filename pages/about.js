@@ -2,68 +2,46 @@ import Head from "next/head";
 import styles from "./about.module.scss";
 import Image from "next/image";
 import { ImageMap } from "@qiuz/react-image-map";
+import { useState, useEffect } from "react";
+import PhotoSwipeLightbox from "photoswipe/lightbox";
+import photoswipe from "photoswipe";
 
 export default function About() {
   const isProd = process.env.NODE_ENV === "production";
   const basePath = isProd ? "/hungtse-next" : "";
 
+  let lightbox = null;
+  const [target, setTarget] = useState(null);
   const mapArea = [
-    {
-      left: "0%",
-      top: "6.5%",
-      height: "4.5%",
-      width: "100%",
-      onMouseOver: () => (document.body.style.cursor = "pointer"),
-      onMouseLeave: () => (document.body.style.cursor = "auto"),
-      imgName: ["攔汙槽.jpg"],
-    },
     {
       left: "0%",
       top: "13.5%",
       height: "5.5%",
       width: "100%",
-      onMouseOver: () => (document.body.style.cursor = "pointer"),
-      onMouseLeave: () => (document.body.style.cursor = "auto"),
-      imgName: ["計量堰.jpg"],
-    },
-    {
-      left: "0%",
-      top: "20.5%",
-      height: "5.5%",
-      width: "100%",
-      onMouseOver: () => (document.body.style.cursor = "pointer"),
-      onMouseLeave: () => (document.body.style.cursor = "auto"),
-      imgName: ["混凝膠凝池.jpg"],
-    },
-    {
-      left: "0%",
-      top: "28%",
-      height: "5.5%",
-      width: "100%",
-      onMouseOver: () => (document.body.style.cursor = "pointer"),
-      onMouseLeave: () => (document.body.style.cursor = "auto"),
-      imgName: ["緩衝槽.jpg"],
+      onMouseOver: () => onMouseOver(),
+      onMouseLeave: () => onMouseLeave(),
+      imgname: ["計量堰.jpg"],
     },
     {
       left: "0%",
       top: "34.5%",
       height: "7.5%",
       width: "100%",
-      onMouseOver: () => (document.body.style.cursor = "pointer"),
-      onMouseLeave: () => (document.body.style.cursor = "auto"),
-      imgName: ["_LIB2263-加壓浮除槽.jpg"],
+      onMouseOver: () => onMouseOver(),
+      onMouseLeave: () => onMouseLeave(),
+      imgname: ["_LIB2263-加壓浮除槽.jpg"],
     },
     {
       left: "0%",
       top: "42.5%",
       height: "11.5%",
       width: "100%",
-      onMouseOver: () => (document.body.style.cursor = "pointer"),
-      onMouseLeave: () => (document.body.style.cursor = "auto"),
-      imgName: [
+      onMouseOver: () => onMouseOver(),
+      onMouseLeave: () => onMouseLeave(),
+      imgname: [
         "_LIB2264-接觸氧化槽1.jpg",
         "接觸氧化槽2.jpg",
-        "_LIB2264-接觸氧化槽3.jpg",
+        "_LIB2267-接觸氧化槽3.jpg",
       ],
     },
     {
@@ -71,45 +49,45 @@ export default function About() {
       top: "56.5%",
       height: "4.8%",
       width: "100%",
-      onMouseOver: () => (document.body.style.cursor = "pointer"),
-      onMouseLeave: () => (document.body.style.cursor = "auto"),
-      imgName: ["快混槽.jpg"],
+      onMouseOver: () => onMouseOver(),
+      onMouseLeave: () => onMouseLeave(),
+      imgname: ["快混槽.jpg"],
     },
     {
       left: "0%",
       top: "63%",
       height: "6.5%",
       width: "100%",
-      onMouseOver: () => (document.body.style.cursor = "pointer"),
-      onMouseLeave: () => (document.body.style.cursor = "auto"),
-      imgName: ["慢混槽.jpg"],
+      onMouseOver: () => onMouseOver(),
+      onMouseLeave: () => onMouseLeave(),
+      imgname: ["慢混槽.jpg"],
     },
     {
       left: "0%",
       top: "71%",
       height: "5%",
       width: "100%",
-      onMouseOver: () => (document.body.style.cursor = "pointer"),
-      onMouseLeave: () => (document.body.style.cursor = "auto"),
-      imgName: ["_LIB2269-沉澱槽.jpg"],
+      onMouseOver: () => onMouseOver(),
+      onMouseLeave: () => onMouseLeave(),
+      imgname: ["_LIB2269-沉澱槽.jpg"],
     },
     {
       left: "0%",
       top: "78%",
       height: "5.5%",
       width: "100%",
-      onMouseOver: () => (document.body.style.cursor = "pointer"),
-      onMouseLeave: () => (document.body.style.cursor = "auto"),
-      imgName: ["_LIB2270-放流槽.jpg"],
+      onMouseOver: () => onMouseOver(),
+      onMouseLeave: () => onMouseLeave(),
+      imgname: ["_LIB2270-放流槽.jpg"],
     },
     {
       left: "0%",
       top: "85.5%",
       height: "5%",
       width: "100%",
-      onMouseOver: () => (document.body.style.cursor = "pointer"),
-      onMouseLeave: () => (document.body.style.cursor = "auto"),
-      imgName: [
+      onMouseOver: () => onMouseOver(),
+      onMouseLeave: () => onMouseLeave(),
+      imgname: [
         "_LIB2278-淤泥帶濾式脫水機.jpg",
         "_LIB2279-淤泥帶濾式脫水機.jpg",
       ],
@@ -119,17 +97,66 @@ export default function About() {
       top: "92%",
       height: "7%",
       width: "100%",
-      onMouseOver: () => (document.body.style.cursor = "pointer"),
-      onMouseLeave: () => (document.body.style.cursor = "auto"),
-      imgName: "_LIB2205-淤泥烘乾機.jpg",
+      onMouseOver: () => onMouseOver(),
+      onMouseLeave: () => onMouseLeave(),
+      imgname: ["_LIB2205-淤泥烘乾機.jpg"],
     },
   ];
 
+  const [options, setOptions] = useState({
+    dataSource: [
+      ...((mapArea[0] && mapArea[0].imgname) || []).map((x) => ({
+        src: `${basePath}/image/${x}`,
+        width: 1200,
+        height: 800,
+        alt: x,
+      })),
+    ],
+    showHideAnimationType: "none",
+    pswpModule: photoswipe,
+  });
+
   const onMapClick = (area, index) => {
-    // const tip = `click map${index + 1}`;
-    // console.log(tip, area);
-    // alert(tip);
+    setTarget(index);
+
+    setOptions({
+      dataSource: [
+        ...((mapArea[index] && mapArea[index].imgname) || []).map((x) => ({
+          src: `${basePath}/image/${x}`,
+          width: 1200,
+          height: 800,
+          alt: x,
+        })),
+      ],
+      showHideAnimationType: "none",
+      pswpModule: photoswipe,
+    });
   };
+
+  const onMouseOver = () => {
+    if (typeof window !== "undefined") {
+      document.body.style.cursor = "pointer";
+    }
+  };
+
+  const onMouseLeave = () => {
+    if (typeof window !== "undefined") {
+      document.body.style.cursor = "auto";
+    }
+  };
+
+  useEffect(() => {
+    lightbox = new PhotoSwipeLightbox(options);
+    lightbox.init();
+
+    lightbox.on("close", () => {
+      setTarget(null);
+    });
+
+    if (target !== null) {
+      lightbox.loadAndOpen(0);
+    }
+  }, [target]);
 
   return (
     <div className={`container about`}>

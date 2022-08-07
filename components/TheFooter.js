@@ -23,7 +23,7 @@ export default function Footer() {
           23 KUNG-YEH 2 ROAD KUAN IN INDUSTRIAL ZONE
           <br /> TAO-YUAN. TAIWAN. R.O.C.
         </div>
-        <div d>
+        <div>
           TEL／(03)4836636~8 <br />
           FAX／(03)4836136 <br />
           EMAIL／HungTse84@gmail.com
