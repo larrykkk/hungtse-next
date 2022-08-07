@@ -27,7 +27,17 @@ export default function Contact() {
         </div>
       </div>
 
-      <main></main>
+      <main>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.034877538563!2d121.12145331500696!3d25.066806983956987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3468279f950d991f%3A0x71df53c44fb5cfb3!2z56uR5r6k5a-m5qWt6IKh5Lu95pyJ6ZmQ5YWs5Y-4!5e0!3m2!1szh-TW!2stw!4v1659854533964!5m2!1szh-TW!2stw"
+          width="600"
+          height="450"
+          style={{ border: 0 }}
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </main>
     </div>
   );
 }
