@@ -1,27 +1,53 @@
+%font {
+    font-size: 1.75rem;
+    line-height: 40px;
+
+    @media screen and (max-width: 767px) {
+        font-size: 1.25rem;
+        line-height: 24px;
+    }
+}
+
 .history {
     flex-direction: row !important;
+    justify-content: center;
+
+    @media screen and (max-width: 767px) {
+        flex-direction: column-reverse !important;
+    }
 
     .timeline-image {
         position: relative;
-        width: 500px;
-        height: 768px;
+        min-width: 320px;
+        width: 100%;
+        max-width: 400px;
+        aspect-ratio: 797 / 1536;
     }
 
     .timeline-text {
-        font-size: 1.75rem;
-        line-height: 40px;
+        @extend %font;
+        width: 100%;
+        max-width: 535px;
+        margin-left: 60px;
+
+        @media screen and (max-width: 767px) {
+            margin-left: 0;
+            margin-bottom: 30px;
+        }
     }
 }
 
 .sewage {
     .sewage-text {
-        font-size: 1.75rem;
-        line-height: 40px;
+        @extend %font;
     }
 
     .sewage-image {
+
         position: relative;
-        width: 600px;
-        height: 4494px;
+        min-width: 320px;
+        width: 100%;
+        max-width: 600px;
+        aspect-ratio: 879 / 6615;
     }
 }

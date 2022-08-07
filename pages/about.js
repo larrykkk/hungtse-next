@@ -7,7 +7,7 @@ export default function About() {
   const basePath = isProd ? "/hungtse-next" : "";
 
   return (
-    <div className={`container`}>
+    <div className={`container about`}>
       <Head>
         <title>關於竑澤 | 竑澤實業股份有限公司</title>
         <meta
@@ -42,17 +42,9 @@ export default function About() {
             <Image src={basePath + "/image/時間軸.png"} layout="fill"></Image>
           </div>
           <div className="timeline-text">
-            竑澤實業成立於民國 81 年 10 月，為中華 <br />
-            民國經濟部核准公司，並於民國 84 年開 <br />
-            始營運，至今已超過 25 年。我們擁有專
-            <br />
-            業的一貫作業，堅持品質的良好，從胚 <br />
-            布開始進行初步的處理、各式加工作業 <br />
-            再到後整理，竑澤都層層把關，提供客 <br />
-            戶最好的成品；除了專業技術，竑澤擁 <br />
-            有靈活的機動性及溝通，給顧客最實在 <br />
-            的；為滿足顧客需求，竑澤不斷新增服
-            <br />
+            竑澤實業成立於民國 81 年 10 月，為中華 民國經濟部核准公司，並於民國
+            84 年開始營運，至今已超過 25
+            年。我們擁有專業的一貫作業，堅持品質的良好，從胚布開始進行初步的處理、各式加工作業再到後整理，竑澤都層層把關，提供客戶最好的成品；除了專業技術，竑澤擁有靈活的機動性及溝通，給顧客最實在的；為滿足顧客需求，竑澤不斷新增服
             務的項目，成為最全面的印染廠。
           </div>
         </div>
