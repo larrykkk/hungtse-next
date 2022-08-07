@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { useRouter } from "next/router";
 import styles from "./TheHeader.module.scss";
 import { useWindowSize } from "../hooks/useWindowDimensions.js";
@@ -54,7 +54,7 @@ export default function Header() {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [wrapperRef]);
+  }, [wrapperRef, toggleSubMenu]);
 
   var getClassName = (_pathname) => {
     return pathname === _pathname
@@ -62,13 +62,13 @@ export default function Header() {
       : `${styles.link}`;
   };
 
-  var toggleSubMenu = (name) => {
+  var toggleSubMenu = useCallback((name) => {
     if (subMenuActiveName === name) {
       setSubMenuActiveName("");
     } else {
       setSubMenuActiveName(name);
     }
-  };
+  }, [subMenuActiveName]);
 
   const Menu = () => (
     <div

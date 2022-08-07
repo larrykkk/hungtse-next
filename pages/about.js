@@ -10,7 +10,6 @@ export default function About() {
   const isProd = process.env.NODE_ENV === "production";
   const basePath = isProd ? "/hungtse-next" : "";
 
-  let lightbox = null;
   const [target, setTarget] = useState(null);
   const mapArea = [
     {
@@ -145,8 +144,10 @@ export default function About() {
     }
   };
 
+  let lightbox = null;
+  lightbox = new PhotoSwipeLightbox(options);
+
   useEffect(() => {
-    lightbox = new PhotoSwipeLightbox(options);
     lightbox.init();
 
     lightbox.on("close", () => {
@@ -156,7 +157,7 @@ export default function About() {
     if (target !== null) {
       lightbox.loadAndOpen(0);
     }
-  }, [target]);
+  }, [target, lightbox]);
 
   return (
     <div className={`container about`}>
@@ -191,7 +192,11 @@ export default function About() {
 
         <div className={`${styles.section} history`}>
           <div className="timeline-image">
-            <Image src={basePath + "/image/時間軸.png"} layout="fill"></Image>
+            <Image
+              src={basePath + "/image/時間軸.png"}
+              layout="fill"
+              alt="竑澤沿革時間軸"
+            ></Image>
           </div>
           <div className="timeline-text">
             竑澤實業成立於民國 81 年 10 月，為中華 民國經濟部核准公司，並於民國

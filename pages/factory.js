@@ -77,7 +77,7 @@ export default function Factory() {
       lightbox.destroy();
       lightbox = null;
     };
-  }, []);
+  }, [equipment]);
 
   return (
     <div className={`container`}>
@@ -422,6 +422,7 @@ export default function Factory() {
                           "jpg" || "png"
                         }`}
                         layout="fill"
+                        alt={item.name}
                       ></Image>
                       <FontAwesomeIcon
                         icon={faUpRightAndDownLeftFromCenter}
@@ -458,6 +459,7 @@ export default function Factory() {
                           "jpg" || "png"
                         }`}
                         layout="fill"
+                        alt={item.name}
                       ></Image>
                       <FontAwesomeIcon
                         icon={faUpRightAndDownLeftFromCenter}

@@ -93,7 +93,7 @@ export default function Home() {
   // Get 'width' and 'height' after the initial render and every time the list changes
   useEffect(() => {
     getListSize();
-  }, [swiperSlides.current]);
+  }, []);
 
   // Update 'width' and 'height' when the window resizes
   useEffect(() => {
