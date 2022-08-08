@@ -1,6 +1,7 @@
 .contact-info {
     flex-direction: row !important;
     justify-content: space-evenly;
+    flex-wrap: wrap;
 
     .info-item {
         position: relative;
@@ -10,6 +11,11 @@
         aspect-ratio: 372 /263;
         border: 5px solid var(--text-blue-color-4);
         border-radius: 44px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
 
     .info-item-image {
@@ -17,12 +23,116 @@
         width: 100%;
         max-width: 100px;
         aspect-ratio: 100 / 100;
+        margin: 0 auto;
+    }
+
+    .info-item-text {
+        padding: 12px;
+        text-align: center;
+
+        div {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 16px;
+        }
+
+        h4 {
+            width: 80%;
+            min-width: 200px;
+            margin: 0 auto;
+            font-size: 1rem;
+            color: var(--text-blue-color-1);
+            text-align: center;
+        }
     }
 }
 
-form {
-    font-size: 1.25rem;
+.form-section {
+    margin-top: 30px !important;
+
+    label {
+        font-size: 1.5rem;
+
+
+        @media screen and (max-width: 767px) {
+            font-size: 1rem;
+        }
+
+    }
+
+    input,
+    textarea {
+        width: 100%;
+        background: #FFFFFF;
+        border: 1px solid #CCCCCC;
+        border-radius: 10px;
+        margin-top: 10px;
+        margin-bottom: 15px;
+        padding-left: 10px;
+    }
+
+    input {
+        height: 45px;
+    }
+
+    textarea {
+        padding-top: 10px;
+        border-radius: 10px;
+    }
+
+    .must::after {
+        content: "*";
+        color: var(--text-blue-color-3);
+        font-size: 1.5rem;
+        position: relative;
+        left: 5px;
+    }
+
+    form {
+        width: 80%;
+        max-width: 1200px;
+        font-size: 1.25rem;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        @media screen and (max-width: 767px) {
+            width: 90%;
+        }
+
+        div {
+            width: calc(50% - 5px);
+
+            @media screen and (max-width: 767px) {
+                width: 100% !important;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+            }
+        }
+    }
+
+    input[type=submit] {
+        padding-left: 0;
+        color: #fff;
+        background-color: #3687FF
+    }
+
 }
-input, textarea {
-    border: 1px solid #000;
+
+
+
+.map-section {
+    margin-top: 30px !important;
+    margin-bottom: 30px !important;
+
+    div {
+        width: 100%;
+        max-width: 600px;
+    }
+
+    .map {
+        width: 100%;
+        border: 5px solid #C5B7A8 !important;
+        border-radius: 50px;
+    }
 }

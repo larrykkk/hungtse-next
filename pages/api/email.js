@@ -31,7 +31,8 @@ if (process.env.NODE_ENV !== "production") {
 }
 
 export default async function handler(req, res) {
-  var email = req.body.email;
+  var email = req.body;
+
   if (
     !email ||
     (email &&
@@ -45,10 +46,10 @@ export default async function handler(req, res) {
   var isError = false;
   await main(email).catch((err) => {
     isError = true;
-    logger.error(err.message);
+    console.error(err.message);
   });
 
-  res.send(isError ? "error" : "success");
+  res.send({ message: isError ? "error" : "success" });
 }
 
 async function main(email) {
@@ -101,10 +102,10 @@ async function main(email) {
     html: html, // html body
   });
 
-  logger.log("Message sent: %s", info.messageId);
+  console.log("Message sent: %s", info.messageId);
   // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
 
   // Preview only available when sending through an Ethereal account
-  logger.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
+  console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
   // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
 }
