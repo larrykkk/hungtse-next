@@ -1,0 +1,28 @@
+.contact-info {
+    flex-direction: row !important;
+    justify-content: space-evenly;
+
+    .info-item {
+        position: relative;
+        width: 100%;
+        max-width: 372px;
+        // height: 263px;
+        aspect-ratio: 372 /263;
+        border: 5px solid var(--text-blue-color-4);
+        border-radius: 44px;
+    }
+
+    .info-item-image {
+        position: relative;
+        width: 100%;
+        max-width: 100px;
+        aspect-ratio: 100 / 100;
+    }
+}
+
+form {
+    font-size: 1.25rem;
+}
+input, textarea {
+    border: 1px solid #000;
+}
