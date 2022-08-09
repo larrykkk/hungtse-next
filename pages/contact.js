@@ -1,10 +1,15 @@
 import Head from "next/head";
 import styles from "./contact.module.scss";
 import Image from "next/image";
+import ReCAPTCHA from "react-google-recaptcha";
+import { useRef, useState } from "react";
 
 export default function Contact() {
   const isProd = process.env.NODE_ENV === "production";
   const basePath = isProd ? "/hungtse-next" : "";
+  const recaptchaRef = useRef();
+  const [submitButtonDisabled, setSubmitButtonDisabled] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   function postData(url, data) {
     // Default options are marked with *
@@ -21,21 +26,53 @@ export default function Contact() {
     }).then((response) => response.json()); // 輸出成 json
   }
 
+  function postData2(url, data) {
+    // Default options are marked with *
+    return fetch(url, {
+      body: data, // must match 'Content-Type' header
+      cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+      credentials: "same-origin", // include, same-origin, *omit
+      headers: {
+        "user-agent": "Mozilla/4.0 MDN Example",
+        "content-type": "application/json",
+      },
+      method: "POST", // *GET, POST, PUT, DELETE, etc.
+      referrer: "no-referrer", // *client, no-referrer
+    }).then((response) => response.json()); // 輸出成 json
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     var formData = new FormData(document.querySelector("#contact-form"));
 
+    setLoading(true);
     postData(basePath + `/api/email`, formData)
-      .then((data) => {
-        console.log(data);
+      .then(() => {
         alert("已寄出，感謝您的來信");
+        document.getElementById("contact-form").reset();
       })
       .catch((error) => {
         console.error(error);
         alert("寄送失敗，可直接聯繫我們");
+      })
+      .finally(() => {
+        setLoading(false);
+        recaptchaRef.current.reset();
       });
   };
+
+  function onChange(value) {
+    postData2(basePath + `/api/recaptcha`, JSON.stringify({ captcha: value }))
+      .then((data) => {
+        if (data.success) {
+          setSubmitButtonDisabled(false);
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }
 
   return (
     <div className={`container`}>
@@ -178,8 +215,17 @@ export default function Contact() {
                 required
               ></textarea>
             </div>
-
-            <input type="submit" value="提交"></input>
+            <ReCAPTCHA
+              ref={recaptchaRef}
+              sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+              hl="zh-TW"
+              onChange={onChange}
+            />
+            <input
+              type="submit"
+              value={loading ? "處理中..." : "提交"}
+              disabled={submitButtonDisabled}
+            ></input>
           </form>
         </div>
 

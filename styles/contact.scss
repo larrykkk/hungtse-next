@@ -114,7 +114,12 @@
     input[type=submit] {
         padding-left: 0;
         color: #fff;
-        background-color: #3687FF
+        background-color: #3687FF;
+
+        &:disabled {
+            background-color: #ddd;
+            cursor: not-allowed;
+        }
     }
 
 }
