@@ -6,7 +6,8 @@ import { useRef, useState } from "react";
 
 export default function Contact() {
   const isProd = process.env.NODE_ENV === "production";
-  const basePath = isProd ? "/hungtse-next" : "";
+  const isStatic = process.env.NEXT_PUBLIC_BUILD_MODE === "static";
+  const basePath = isProd && isStatic ? "/hungtse-next" : "";
   const recaptchaRef = useRef();
   const [submitButtonDisabled, setSubmitButtonDisabled] = useState(true);
   const [loading, setLoading] = useState(false);

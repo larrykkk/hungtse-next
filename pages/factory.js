@@ -15,7 +15,8 @@ import PhotoSwipeLightbox from "photoswipe/lightbox";
 
 export default function Factory() {
   const isProd = process.env.NODE_ENV === "production";
-  const basePath = isProd ? "/hungtse-next" : "";
+  const isStatic = process.env.NEXT_PUBLIC_BUILD_MODE === "static";
+  const basePath = isProd && isStatic ? "/hungtse-next" : "";
   const basePath2 = basePath
 
   const size = useWindowSize();

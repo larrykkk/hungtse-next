@@ -8,7 +8,8 @@ import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 
 export default function Products() {
   const isProd = process.env.NODE_ENV === "production";
-  const basePath = isProd ? "/hungtse-next" : "";
+  const isStatic = process.env.NEXT_PUBLIC_BUILD_MODE === "static";
+  const basePath = isProd && isStatic? "/hungtse-next" : "";
 
   const size = useWindowSize();
   const [selectd, setSelectd] = useState([]);

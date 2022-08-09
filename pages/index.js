@@ -17,7 +17,8 @@ import { useWindowSize } from "../hooks/useWindowDimensions.js";
 
 export default function Home() {
   const isProd = process.env.NODE_ENV === "production";
-  const basePath = isProd ? "/hungtse-next" : "";
+  const isStatic = process.env.NEXT_PUBLIC_BUILD_MODE === "static";
+  const basePath = isProd && isStatic ? "/hungtse-next" : "";
 
   const size = useWindowSize();
   const swiperSlides = useRef();

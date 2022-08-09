@@ -8,7 +8,8 @@ import photoswipe from "photoswipe";
 
 export default function About() {
   const isProd = process.env.NODE_ENV === "production";
-  const basePath = isProd ? "/hungtse-next" : "";
+  const isStatic = process.env.NEXT_PUBLIC_BUILD_MODE === "static";
+  const basePath = isProd && isStatic ? "/hungtse-next" : "";
 
   const [target, setTarget] = useState(null);
   const mapArea = [

@@ -3,7 +3,8 @@ import styles from "./TheFooter.module.scss";
 
 export default function Footer() {
   const isProd = process.env.NODE_ENV === "production";
-  const basePath = isProd ? "/hungtse-next" : "";
+  const isStatic = process.env.NEXT_PUBLIC_BUILD_MODE === "static";
+  const basePath = isProd && isStatic ? "/hungtse-next" : "";
 
   return (
     <footer className={styles.footer}>

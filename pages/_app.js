@@ -22,7 +22,8 @@ import Head from "next/head";
 
 function MyApp({ Component, pageProps }) {
   const isProd = process.env.NODE_ENV === "production";
-  const basePath = isProd ? "/hungtse-next" : "";
+  const isStatic = process.env.NEXT_PUBLIC_BUILD_MODE === "static";
+  const basePath = isProd && isStatic ? "/hungtse-next" : "";
 
   return (
     <Layout>

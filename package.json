@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "static": "next build && next export",
+    "static": "cross-env NEXT_PUBLIC_BUILD_MODE=static next build && next export",
     "lint": "next lint"
   },
   "dependencies": {
@@ -31,6 +31,7 @@
     "winston": "^3.8.1"
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "eslint": "8.18.0",
     "eslint-config-next": "12.1.6"
   }

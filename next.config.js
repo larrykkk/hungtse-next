@@ -1,9 +1,10 @@
 /** @type {import('next').NextConfig} */
 const isProd = process.env.NODE_ENV === "production";
+const isStatic = process.env.NEXT_PUBLIC_BUILD_MODE === "static";
 
 const nextConfig = {
-  basePath: isProd ? "/hungtse-next" : "",
-  assetPrefix: isProd ? "/hungtse-next/" : "",
+  basePath: isProd && isStatic ? "/hungtse-next" : "",
+  assetPrefix: isProd && isStatic ? "/hungtse-next/" : "",
   reactStrictMode: true,
   images: {
     loader: "akamai",

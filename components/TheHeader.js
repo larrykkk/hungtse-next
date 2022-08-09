@@ -9,7 +9,8 @@ import { faAngleDown, faXmark } from "@fortawesome/free-solid-svg-icons";
 
 export default function Header() {
   const isProd = process.env.NODE_ENV === "production";
-  const basePath = isProd ? "/hungtse-next" : "";
+  const isStatic = process.env.NEXT_PUBLIC_BUILD_MODE === "static";
+  const basePath = isProd && isStatic ? "/hungtse-next" : "";
 
   const router = useRouter();
   const myHeader = useRef(null);
