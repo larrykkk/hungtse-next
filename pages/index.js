@@ -196,7 +196,7 @@ export default function Home() {
             <button className={styles.button}>關於竑澤</button>
           </Link>
         </div>
-
+    
         <div className={styles.title}>產品項目</div>
         <div className={`${styles.section}`}>
           {size.width > 767 ? (

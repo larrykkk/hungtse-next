@@ -9,7 +9,7 @@ import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 export default function Products() {
   const isProd = process.env.NODE_ENV === "production";
   const isStatic = process.env.NEXT_PUBLIC_BUILD_MODE === "static";
-  const basePath = isProd && isStatic? "/hungtse-next" : "";
+  const basePath = isProd && isStatic ? "/hungtse-next" : "";
 
   const size = useWindowSize();
   const [selectd, setSelectd] = useState([]);
@@ -90,7 +90,7 @@ export default function Products() {
         <div className={styles.title} style={{ marginTop: 33 + "px" }}>
           布種列表
         </div>
-        <div className={styles.section}>
+        <div className={styles.section} style={{ position: "relative" }}>
           <Image
             src={basePath + "/image/布種一覽-42.png"}
             alt="布種一覽"
@@ -98,10 +98,11 @@ export default function Products() {
             height={285}
           />
         </div>
+
         <div className={styles.title} style={{ marginTop: 33 + "px" }}>
           布料用途
         </div>
-        <div className={`${styles.section} `}>
+        <div className={`${styles.section}`}>
           {size.width > 767 ? (
             <div className="product-type-choose white-section">
               {productsType.map((item, index) => {

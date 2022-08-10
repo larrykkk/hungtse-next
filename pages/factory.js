@@ -17,7 +17,7 @@ export default function Factory() {
   const isProd = process.env.NODE_ENV === "production";
   const isStatic = process.env.NEXT_PUBLIC_BUILD_MODE === "static";
   const basePath = isProd && isStatic ? "/hungtse-next" : "";
-  const basePath2 = basePath
+  const basePath2 = basePath;
 
   const size = useWindowSize();
 
@@ -411,7 +411,9 @@ export default function Factory() {
               >
                 <Link href={""}>
                   <a
-                    href={`${basePath2}/image/comp3/${item.name}-1.${"jpg" || "png"}`}
+                    href={`${basePath2}/image/comp3/${item.name}-1.${
+                      "jpg" || "png"
+                    }`}
                     data-pswp-width={1200}
                     data-pswp-height={800}
                     target="_blank"
@@ -445,16 +447,21 @@ export default function Factory() {
                   <span>{item.description}</span>
                 </div>
 
-                <Link href={""} style={{ visibility: "hidden" }}>
+                <Link href={""} style={{ visibility: "hidden", height: 0 }}>
                   <a
-                    href={`${basePath2}/image/comp3/${item.name}-2.${"jpg" || "png"}`}
+                    href={`${basePath2}/image/comp3/${item.name}-2.${
+                      "jpg" || "png"
+                    }`}
                     data-pswp-width={1200}
                     data-pswp-height={800}
                     target="_blank"
                     rel="noreferrer"
-                    style={{ visibility: "hidden" }}
+                    style={{ visibility: "hidden", height: 0 }}
                   >
-                    <div className="image" style={{ visibility: "hidden" }}>
+                    <div
+                      className="image"
+                      style={{ visibility: "hidden", height: 0 }}
+                    >
                       <Image
                         src={`${basePath}/image/comp3/${item.name}-2.${
                           "jpg" || "png"
