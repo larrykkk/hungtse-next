@@ -5,7 +5,7 @@ import styles from "./products.module.scss";
 import { useWindowSize } from "../hooks/useWindowDimensions.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
-import WhiteLogo from "../components/whiteLogo.js";
+import WhiteLogo from "../components/WhiteLogo.js";
 
 export default function Products() {
   const isProd = process.env.NODE_ENV === "production";

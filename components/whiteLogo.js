@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useWindowSize } from "../hooks/useWindowDimensions.js";
 
-export default function whiteLogo(props) {
+export default function WhiteLogo(props) {
   const isProd = process.env.NODE_ENV === "production";
   const isStatic = process.env.NEXT_PUBLIC_BUILD_MODE === "static";
   const basePath = isProd && isStatic ? "/hungtse-next" : "";

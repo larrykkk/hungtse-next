@@ -3,7 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./index.module.scss";
-import WhiteLogo from "../components/whiteLogo.js";
+import WhiteLogo from "../components/WhiteLogo.js";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";

@@ -5,7 +5,7 @@ import { ImageMap } from "@qiuz/react-image-map";
 import { useState, useEffect } from "react";
 import PhotoSwipeLightbox from "photoswipe/lightbox";
 import photoswipe from "photoswipe";
-import WhiteLogo from "../components/whiteLogo.js";
+import WhiteLogo from "../components/WhiteLogo.js";
 
 export default function About() {
   const isProd = process.env.NODE_ENV === "production";

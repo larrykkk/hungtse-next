@@ -12,7 +12,7 @@ import { useWindowSize } from "../hooks/useWindowDimensions.js";
 import { useState, useEffect } from "react";
 
 import PhotoSwipeLightbox from "photoswipe/lightbox";
-import WhiteLogo from "../components/whiteLogo.js";
+import WhiteLogo from "../components/WhiteLogo.js";
 
 export default function Factory() {
   const isProd = process.env.NODE_ENV === "production";

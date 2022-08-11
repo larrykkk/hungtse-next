@@ -3,7 +3,7 @@ import styles from "./contact.module.scss";
 import Image from "next/image";
 import ReCAPTCHA from "react-google-recaptcha";
 import { useRef, useState } from "react";
-import WhiteLogo from "../components/whiteLogo.js";
+import WhiteLogo from "../components/WhiteLogo.js";
 
 export default function Contact() {
   const isProd = process.env.NODE_ENV === "production";
