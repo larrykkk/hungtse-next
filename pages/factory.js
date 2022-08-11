@@ -198,7 +198,7 @@ export default function Factory() {
 
           <OverlayTrigger
             trigger="click"
-            placement={size.width > 767 ? "left" : "auto"}
+            placement={size.width > 767 ? "right" : "auto"}
             rootClose={true}
             overlay={
               <Popover id={`popover-positioned`} className="printing">
