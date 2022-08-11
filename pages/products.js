@@ -5,6 +5,7 @@ import styles from "./products.module.scss";
 import { useWindowSize } from "../hooks/useWindowDimensions.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
+import WhiteLogo from "../components/whiteLogo.js";
 
 export default function Products() {
   const isProd = process.env.NODE_ENV === "production";
@@ -59,7 +60,7 @@ export default function Products() {
   ];
 
   return (
-    <div>
+    <div style={{ position: "relative" }}>
       <Head>
         <title>產品項目 | 竑澤實業股份有限公司</title>
         <meta
@@ -68,12 +69,7 @@ export default function Products() {
         />
       </Head>
 
-      <div
-        className={styles.banner}
-        // style={{
-        //   backgroundImage: `url(/_123282362_hi042879001.jpg)`,
-        // }}
-      >
+      <div className={styles.banner}>
         <Image
           src={basePath + "/image/comp3/2 產品項目.png"}
           alt="banner"
@@ -85,6 +81,8 @@ export default function Products() {
           <h3>產品項目</h3>
         </div>
       </div>
+
+      <WhiteLogo l style={{ bottom: 0, left: 0 }}></WhiteLogo>
 
       <main>
         <div className={styles.title} style={{ marginTop: 33 + "px" }}>
@@ -101,6 +99,7 @@ export default function Products() {
 
         <div className={styles.title} style={{ marginTop: 33 + "px" }}>
           布料用途
+          <WhiteLogo r style={{ bottom: 50, right: 0 }}></WhiteLogo>
         </div>
         <div className={`${styles.section}`}>
           {size.width > 767 ? (

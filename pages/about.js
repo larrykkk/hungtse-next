@@ -5,6 +5,7 @@ import { ImageMap } from "@qiuz/react-image-map";
 import { useState, useEffect } from "react";
 import PhotoSwipeLightbox from "photoswipe/lightbox";
 import photoswipe from "photoswipe";
+import WhiteLogo from "../components/whiteLogo.js";
 
 export default function About() {
   const isProd = process.env.NODE_ENV === "production";
@@ -161,7 +162,7 @@ export default function About() {
   }, [target, lightbox]);
 
   return (
-    <div className={`container about`}>
+    <div className={`container about`} style={{ position: "relative" }}>
       <Head>
         <title>關於竑澤 | 竑澤實業股份有限公司</title>
         <meta
@@ -186,6 +187,8 @@ export default function About() {
         </div>
       </div>
 
+      <WhiteLogo r style={{ bottom: 0, right: 0 }}></WhiteLogo>
+
       <main>
         <div className={styles.title} style={{ marginTop: 33 + "px" }}>
           <h3>竑澤沿革</h3>
@@ -209,6 +212,7 @@ export default function About() {
 
         <div className={styles.title} style={{ marginTop: 33 + "px" }}>
           <h3>污水處理法 再造綠能</h3>
+          <WhiteLogo l style={{ bottom: 30, left: 0 }}></WhiteLogo>
         </div>
 
         <div className={`${styles.section} sewage`}>

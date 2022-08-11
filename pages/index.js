@@ -3,6 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./index.module.scss";
+import WhiteLogo from "../components/whiteLogo.js";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -196,7 +197,7 @@ export default function Home() {
             <button className={styles.button}>關於竑澤</button>
           </Link>
         </div>
-    
+
         <div className={styles.title}>產品項目</div>
         <div className={`${styles.section}`}>
           {size.width > 767 ? (
@@ -301,7 +302,10 @@ export default function Home() {
           </div>
         </div>
 
-        <div className={styles.title}>設備介紹</div>
+        <div className={styles.title}>
+          設備介紹
+          <WhiteLogo r style={{ bottom: 50, right: 0 }}></WhiteLogo>
+        </div>
         <div className={styles.section}>
           {size.width > 767 ? (
             <>

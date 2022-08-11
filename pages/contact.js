@@ -3,6 +3,7 @@ import styles from "./contact.module.scss";
 import Image from "next/image";
 import ReCAPTCHA from "react-google-recaptcha";
 import { useRef, useState } from "react";
+import WhiteLogo from "../components/whiteLogo.js";
 
 export default function Contact() {
   const isProd = process.env.NODE_ENV === "production";
@@ -218,7 +219,10 @@ export default function Contact() {
             </div>
             <ReCAPTCHA
               ref={recaptchaRef}
-              sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || 'sitekeysitekeysitekeysitekeysitekeysitekeysitekey'}
+              sitekey={
+                process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ||
+                "sitekeysitekeysitekeysitekeysitekeysitekeysitekey"
+              }
               hl="zh-TW"
               onChange={onChange}
             />
@@ -232,6 +236,7 @@ export default function Contact() {
 
         <div className={styles.title} style={{ marginTop: 33 + "px" }}>
           <h3>交通地圖</h3>
+          <WhiteLogo r style={{ bottom: 0, right: 0 }}></WhiteLogo>
         </div>
 
         <div className={`${styles.section} map-section`}>

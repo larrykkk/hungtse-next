@@ -12,6 +12,7 @@ import { useWindowSize } from "../hooks/useWindowDimensions.js";
 import { useState, useEffect } from "react";
 
 import PhotoSwipeLightbox from "photoswipe/lightbox";
+import WhiteLogo from "../components/whiteLogo.js";
 
 export default function Factory() {
   const isProd = process.env.NODE_ENV === "production";
@@ -81,7 +82,7 @@ export default function Factory() {
   }, [equipment]);
 
   return (
-    <div className={`container`}>
+    <div className={`container`} style={{ position: "relative" }}>
       <Head>
         <title>廠區介紹 | 竑澤實業股份有限公司</title>
         <meta
@@ -133,6 +134,8 @@ export default function Factory() {
           <h2>廠區介紹</h2>
         </div>
       </div>
+
+      <WhiteLogo r style={{ bottom: 0, right: 0 }}></WhiteLogo>
 
       <main>
         <div className={styles.title} style={{ marginTop: 33 + "px" }}>
@@ -399,6 +402,7 @@ export default function Factory() {
         </div>
         <div className={styles.title} style={{ marginTop: 33 + "px" }}>
           <h3>設備介紹</h3>
+          <WhiteLogo l style={{ bottom: 80, left: 0 }}></WhiteLogo>
         </div>
 
         <div className={`${styles.section} equipment`} id="equipment">
