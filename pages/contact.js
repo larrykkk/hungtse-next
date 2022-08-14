@@ -186,21 +186,27 @@ export default function Contact() {
               </label>
               <input type="text" id="name" name="name" required />
             </div>
-            <div style={{ marginRight: "5px" }}>
+            <div style={{ width: "calc(40% - 5px)", marginRight: "5px" }}>
               <label htmlFor="number" className="must">
                 電話
               </label>
               <input type="number" id="number" name="number" required />
             </div>
-            <div style={{ width: "20%", marginLeft: "5px" }}>
+            <div
+              style={{
+                width: "calc(20% - 10px)",
+                marginLeft: "5px",
+                marginRight: "5px",
+              }}
+            >
               <label htmlFor="extensionNumber">分機</label>
               <input type="text" id="extensionNumber" name="extensionNumber" />
             </div>
-            <div style={{ marginRight: "5px" }}>
+            <div style={{ width: "calc(40% - 5px)", marginLeft: "5px" }}>
               <label htmlFor="fax">傳真</label>
               <input type="text" id="fax" name="fax" />
             </div>
-            <div style={{ marginLeft: "5px" }}>
+            <div style={{ marginLeft: "0" }}>
               <label htmlFor="spec" className="must">
                 布規
               </label>
@@ -231,6 +237,9 @@ export default function Contact() {
               value={loading ? "處理中..." : "提交"}
               disabled={submitButtonDisabled}
             ></input>
+            <p className="tip">
+              提交後即表示我同意和竑澤實業分享所提供的資訊，以獲得更多竑澤實業的服務項目說明。
+            </p>
           </form>
         </div>
 

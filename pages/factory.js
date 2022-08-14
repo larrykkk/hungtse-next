@@ -25,40 +25,48 @@ export default function Factory() {
   const [equipment, setEquipment] = useState([
     {
       name: "落布機",
+      en: "DOFFING MACHINE",
       description:
         "將要進行染色或上膠的布料作前整理，適用於針織圓筒布、毛巾布、平織等胚布。",
     },
     {
       name: "高溫染色機",
+      en: "HIGH TEMPERATURE DYEING MACHINE",
       description:
         "通過染料或顏料和紡織物發生物理或物理化學的結合，浸入一定溫度的染料水溶液中，使紡織物獲得鮮豔、均勻和堅牢色澤的加工過程；除了染色，還可進行精煉，其目的為去除胚布本身的雜質、油脂等等，以提升染色的品質。",
     },
     {
       name: "烘乾機",
+      en: "DRYING MACHINE",
       description: "靠熱能或電磁能，使溼織物內的水分蒸發成爲乾燥的織物。",
     },
     {
       name: "蒸箱",
+      en: "STEAM COTTAGE",
       description:
         "使織物在不同溫溼度條件下完成染料、化學品對纖維的滲透、反應和色牢度。",
     },
     {
       name: "打樣室",
+      en: "SAMPLE ROOM",
       description:
         "根據客戶的色樣要求，確定原料及染色配比，安排不同的染色組合，進行小樣打色。",
     },
     {
       name: "定型機",
+      en: "SETTING MACHINE",
       description:
         "用來穩定布料的大小、顏色及縮水程度。其中又分為前定和成定；前定是在染布後先將部分特殊布種做一次定型，具有彈性的布料，則需要較多次的定型，才能維持其彈性及品質；成定則是染布後的最終定型，這個程序對每一匹布料都是必需的，布料在染色或者烘乾之後，預防產生縮水、扭曲、伸縮度不佳等情形。",
     },
     {
       name: "印花機",
+      en: "PRINTING MACHINE",
       description:
         "利用鏤空花紋的圓筒狀鎳皮篩網，按一定順序安裝在循環運行的橡膠導帶上方，並與導帶同步轉動。印花時，色漿輸入網內，貯留在網底，圓網隨導帶轉動時，緊壓在網底的刮刀與花網發生相對刮壓，色漿透過網上花紋到達織物表面。",
     },
     {
       name: "包裝機",
+      en: "PACKING MACHINE",
       description:
         "以粗紙管為中心，將一大匹布慢慢的捆，捆成差不多等重量的成布，裹上外包裝，等待出貨。",
     },
@@ -297,7 +305,7 @@ export default function Factory() {
                     color: "#3A6A9A",
                   }}
                 >
-                  <table width={"300px"}>
+                  <table width={"350px"}>
                     <tr>
                       <td>撥水</td>
                       <td>Water-Repellent Finishing</td>
@@ -448,7 +456,8 @@ export default function Factory() {
 
                 <div className="text">
                   <h3>{item.name}</h3>
-                  <span>{item.description}</span>
+                  <div className={'en-text'}>{item.en}</div>
+                  <div className="desc">{item.description}</div>
                 </div>
 
                 <Link href={""} style={{ visibility: "hidden", height: 0 }}>

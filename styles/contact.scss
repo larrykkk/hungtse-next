@@ -141,3 +141,14 @@
         border-radius: 50px;
     }
 }
+
+.tip {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    color: #7A7A7A;
+
+    @media screen and (max-width: 767px) {
+        font-size: 1rem;
+    }
+}

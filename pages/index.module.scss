@@ -111,7 +111,6 @@
   @media screen and (max-width: 767px) {
     margin: 10px 8px;
     font-size: 1.25rem;
-
   }
 
   display: flex;
@@ -121,6 +120,14 @@
   font-size: 2rem;
   font-weight: 700;
   margin: 0px 20px;
+}
+
+.en-text {
+  @media screen and (max-width: 767px) {
+    font-size: 0.8rem;
+  }
+  margin-top: 5px !important;
+  font-size: 1rem;
 }
 
 .content img {

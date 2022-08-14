@@ -27,6 +27,7 @@ export default function Products() {
   const productsType = [
     {
       name: "寢具",
+      en: "BEDDING USE",
       otherImages: [
         "寢具-133X72C 40S.jpg",
         "寢具-133X72C.jpg",
@@ -35,18 +36,22 @@ export default function Products() {
     },
     {
       name: "浴袍",
+      en: "BATH RODE",
       otherImages: ["浴袍-60_60C.jpg", "浴袍-96_72TC.jpg", "浴袍-R_.jpg"],
     },
     {
       name: "家飾",
+      en: "FURNISHING FABRIC",
       otherImages: ["家飾-75DT.jpg", "家飾-150_170TC.jpg", "家飾-R_.jpg"],
     },
     {
       name: "成衣",
+      en: "GARMENT USE",
       otherImages: ["成衣-針織1.jpg", "成衣-針織2.jpg", "成衣-剪花布.jpg"],
     },
     {
       name: "醫療",
+      en: "MEDICAL USE",
       otherImages: [
         "寢具-110_52TC.jpg",
         "寢具-110_52TC(1).jpg",
@@ -55,6 +60,7 @@ export default function Products() {
     },
     {
       name: "迷彩",
+      en: "CAMOUFLAGE",
       otherImages: ["迷彩-75D.jpg", "迷彩-500D_N_.jpg", "迷彩-N_.jpg"],
     },
   ];
@@ -114,6 +120,7 @@ export default function Products() {
                     onClick={() => toggleSelectd(item.name)}
                   >
                     {item.name}
+                    <div style={{ fontSize: "10px" }}>{item.en}</div>
                   </button>
                 );
               })}
@@ -147,7 +154,10 @@ export default function Products() {
                             id={item.name}
                             onClick={() => toggleSelectd(item.name)}
                           ></input>
-                          <label htmlFor={item.name}>{item.name}</label>
+                          <label htmlFor={item.name}>
+                            {item.name}{" "}
+                            <span style={{ fontSize: "14px" }}>{item.en}</span>
+                          </label>
                         </div>
                       );
                     })}
@@ -166,7 +176,9 @@ export default function Products() {
                 .map((item, index) => {
                   return (
                     <div key={index} id={item.name}>
-                      <div className="product-type-name">{item.name}</div>
+                      <div className="product-type-name">
+                        {item.name} {item.en}
+                      </div>
                       <div className="product-type-Thumbnail">
                         <div className="product-type-Thumbnail-main">
                           <Image
@@ -207,7 +219,9 @@ export default function Products() {
                 .map((item, index) => {
                   return (
                     <div key={index} id={item.name}>
-                      <div className="product-type-name">{item.name}</div>
+                      <div className="product-type-name">
+                        {item.name} {item.en}
+                      </div>
                       <div className="product-type-Thumbnail ">
                         <div
                           className="product-type-Thumbnail-other horizontal-scroll"

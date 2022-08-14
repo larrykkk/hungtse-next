@@ -27,22 +27,27 @@ export default function Home() {
   const [slides, setSlides] = useState([
     {
       title: "染色",
+      en: "DYEING",
       name: "寢具-133X72C 40S",
     },
     {
       title: "特殊印花",
+      en: "ENGINEERED PRINT",
       name: "寢具-133X72C",
     },
     {
       title: "醫療",
+      en: "MEDICAL USE",
       name: "醫療-總覽",
     },
     {
       title: "寢具、成衣",
+      en: "BEDDING USE / GARMENT USE",
       name: "寢具-總覽",
     },
     {
       title: "迷彩",
+      en: "CAMOUFLAGE",
       name: "迷彩-總覽",
     },
   ]);
@@ -51,34 +56,42 @@ export default function Home() {
     {
       id: 1,
       name: "落布機",
+      en: "DOFFING MACHINE",
     },
     {
       id: 2,
       name: "高溫染色機",
+      en: "HIGH TEMPERATURE DYEING MACHINE",
     },
     {
       id: 3,
       name: "烘乾機",
+      en: "DRYING MACHINE",
     },
     {
       id: 4,
       name: "蒸箱",
+      en: "STEAM COTTAGE",
     },
     {
       id: 5,
       name: "打樣室",
+      en: "SAMPLE ROOM",
     },
     {
       id: 6,
       name: "定型機",
+      en: "SETTING MACHINE",
     },
     {
       id: 7,
       name: "印花機",
+      en: "PRINTING MACHINE",
     },
     {
       id: 8,
       name: "包裝機",
+      en: "PACKING MACHINE",
     },
   ]);
 
@@ -151,6 +164,7 @@ export default function Home() {
                 />
               </div>
               <span>機動性高</span>
+              <span className={styles["en-text"]}>SWIFTNESS</span>
             </div>
             <div>
               <div className={styles["advantage-img"]}>
@@ -161,6 +175,7 @@ export default function Home() {
                 />
               </div>
               <span>品質穩定</span>
+              <span className={styles["en-text"]}>STABILIZATION</span>
             </div>
             <div>
               <div className={styles["advantage-img"]}>
@@ -171,6 +186,7 @@ export default function Home() {
                 />
               </div>
               <span>交貨守時</span>
+              <span className={styles["en-text"]}>ACCURATE DELIVERY</span>
             </div>
             <div>
               <div className={styles["advantage-img"]}>
@@ -181,6 +197,7 @@ export default function Home() {
                 />
               </div>
               <span>服務多元</span>
+              <span className={styles["en-text"]}>DIVERSIFIED PRODUCT</span>
             </div>
             <div>
               <div className={styles["advantage-img"]}>
@@ -191,6 +208,7 @@ export default function Home() {
                 />
               </div>
               <span>價格合理</span>
+              <span className={styles["en-text"]}>REASOVABLY PRICED</span>
             </div>
           </div>
           <Link href="/image/about">
@@ -226,6 +244,7 @@ export default function Home() {
                 className="mySwiper1"
                 key={1}
                 style={{ marginBottom: "70px" }}
+                // simulateTouch={false}
               >
                 {slides.map((item) => {
                   return (
@@ -248,7 +267,15 @@ export default function Home() {
                           layout="fill"
                         />
                       </div>
-                      <div className={styles.swiperDesc}>{item.title}</div>
+                      <div className={`${styles.swiperDesc} swiper-no-swiping`}>
+                        {item.title}
+                      </div>
+                      <span
+                        className={`${styles["en-text"]} swiper-no-swiping`}
+                        style={{ color: "#343F52", fontWeight: 600 }}
+                      >
+                        {item.en}
+                      </span>
                     </SwiperSlide>
                   );
                 })}
@@ -286,9 +313,17 @@ export default function Home() {
                         layout="fill"
                       />
                     </div>
-                    <span className={styles["mobile-products-desc"]}>
+                    <span
+                      className={`${styles["mobile-products-desc"]} swiper-no-swiping`}
+                    >
                       {item.title}
                     </span>
+                    <div
+                      className={`${styles["en-text"]} swiper-no-swiping`}
+                      style={{ color: "#343F52", fontWeight: 600 }}
+                    >
+                      {item.en}
+                    </div>
                   </div>
                 );
               })}
@@ -354,7 +389,15 @@ export default function Home() {
                           layout="fill"
                         />
                       </div>
-                      <div className={styles.swiperDesc}>{item.name}</div>
+                      <div className={`${styles.swiperDesc} swiper-no-swiping`}>
+                        {item.name}
+                      </div>
+                      <div
+                        className={`${styles["en-text"]} swiper-no-swiping`}
+                        style={{ color: "#343F52", fontWeight: 600 }}
+                      >
+                        {item.en}
+                      </div>
                     </SwiperSlide>
                   );
                 })}
@@ -395,6 +438,12 @@ export default function Home() {
                     <span className={styles["mobile-equipment-desc"]}>
                       {item.name}
                     </span>
+                    <div
+                      className={`${styles["en-text"]}`}
+                      style={{ color: "#343F52", fontWeight: 600 }}
+                    >
+                      {item.en}
+                    </div>
                   </div>
                 );
               })}
