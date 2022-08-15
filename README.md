@@ -30,10 +30,15 @@ npm run dev
 ### Deployment
 
 ```
+安裝 Git
+安裝 Nodejs 18.6.xx
+安裝 pm2 
 npm install pm2 -g
 npm i
 npm run build
 pm2 start
+pm2 startup
+pm2 save
 ```
 
 ### Check pm2 process 
