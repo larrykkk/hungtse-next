@@ -35,6 +35,7 @@ npm run dev
 安裝 pm2 
 npm install pm2 -g
 npm i
+設置環境變數
 npm run build
 pm2 start
 pm2 startup
