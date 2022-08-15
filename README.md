@@ -9,7 +9,7 @@
 [DEMO](https://larrykkk.github.io/hungtse-next/)
 
 ## Project status
-進行中...
+已完成
 
 ## Tech stack
 
