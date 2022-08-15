@@ -42,7 +42,7 @@ npm install pm2 -g
 安裝網站需要的模組
 npm i
 
-設置環境變數
+設置環境變數，參考 .env.local.example 新增 .env.local
 
 npm run build
 
