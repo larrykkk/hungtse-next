@@ -186,7 +186,7 @@ export default function Contact() {
               </label>
               <input type="text" id="name" name="name" required />
             </div>
-            <div style={{ width: "calc(40% - 5px)", marginRight: "5px" }}>
+            <div style={{ width: "calc(30% - 5px)", marginRight: "5px" }}>
               <label htmlFor="number" className="must">
                 電話
               </label>
@@ -202,7 +202,7 @@ export default function Contact() {
               <label htmlFor="extensionNumber">分機</label>
               <input type="text" id="extensionNumber" name="extensionNumber" />
             </div>
-            <div style={{ width: "calc(40% - 5px)", marginLeft: "5px" }}>
+            <div style={{ width: "calc(50% - 5px)", marginLeft: "5px" }}>
               <label htmlFor="fax">傳真</label>
               <input type="text" id="fax" name="fax" />
             </div>
