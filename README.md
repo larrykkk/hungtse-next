@@ -30,15 +30,26 @@ npm run dev
 ### Deployment
 
 ```
-安裝 Git
-安裝 Nodejs 18.6.xx
-安裝 pm2 
+安裝 Git 
+https://git-scm.com/downloads
+
+安裝 Nodejs 18.6.0
+https://github.com/coreybutler/nvm-windows/releases
+
+安裝 pm2
 npm install pm2 -g
+
+安裝網站需要的模組
 npm i
+
 設置環境變數
+
 npm run build
+
 pm2 start
+
 pm2 startup
+
 pm2 save
 ```
 
