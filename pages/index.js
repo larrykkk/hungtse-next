@@ -211,7 +211,7 @@ export default function Home() {
               <span className={styles["en-text"]}>REASOVABLY PRICED</span>
             </div>
           </div>
-          <Link href="/image/about">
+          <Link href="/about">
             <button className={styles.button}>關於竑澤</button>
           </Link>
         </div>
