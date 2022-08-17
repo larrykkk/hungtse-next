@@ -30,14 +30,17 @@ npm run dev
 ### Deployment
 
 ```
-安裝 Git 
-https://git-scm.com/downloads
+下載程式碼
+https://github.com/larrykkk/hungtse-next
 
 安裝 Nodejs 18.6.0
 https://github.com/coreybutler/nvm-windows/releases
 
 安裝 pm2
 npm install pm2 -g
+
+安裝 pm2-windows-startup
+npm install pm2-windows-startup -g
 
 安裝網站需要的模組
 npm i
@@ -48,13 +51,14 @@ npm run build
 
 pm2 start
 
-pm2 startup
+pm2-startup install
 
 pm2 save
+
+重啟後 pm2 ls 確認是否進程還在
 ```
 
 ### Check pm2 process 
-
 ```
 pm2 ls
 ```
