@@ -36,11 +36,15 @@ https://github.com/larrykkk/hungtse-next
 安裝 Nodejs 18.6.0
 https://github.com/coreybutler/nvm-windows/releases
 
+(開啟終端機)
+
 安裝 pm2
 npm install pm2 -g
 
 安裝 pm2-windows-startup
 npm install pm2-windows-startup -g
+
+(cd hungtse-next-main)
 
 安裝網站需要的模組
 npm i
@@ -50,6 +54,8 @@ npm i
 npm run build
 
 pm2 start
+
+打開 localhost:3000 確認畫面正常
 
 pm2-startup install
 
