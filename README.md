@@ -36,20 +36,36 @@ https://github.com/larrykkk/hungtse-next
 安裝 Nodejs 18.6.0
 https://github.com/coreybutler/nvm-windows/releases
 
-(開啟終端機)
+(開啟終端機: 點擊開始以後輸入 cmd + enter)
+(
+下載 nvm 18.6.0
+nvm install 18.6.0
+
+切換使用 node 18.6.0
+nvm use 18.6.0
+
+檢查是否成功
+nvm ls
+
+這時候應該會顯示 
+ * 18.6.0 (Currently using 64-bit executable)
+)
 
 安裝 pm2
 npm install pm2 -g
 
+(確認成功: pm2 -v)
+
 安裝 pm2-windows-startup
 npm install pm2-windows-startup -g
 
-(cd hungtse-next-main)
+(cmd 輸入 'cd  \Users\user\Desktop\hungtse-next-main' 切換目錄到網站程式碼資料夾下)
 
 安裝網站需要的模組
 npm i
 
 設置環境變數，參考 .env.local.example 新增 .env.local
+(https://www.google.com/recaptcha/about/)
 
 npm run build
 
