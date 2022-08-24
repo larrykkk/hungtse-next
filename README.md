@@ -69,7 +69,7 @@ npm i
 
 npm run build
 
-pm2 start
+pm2 start (如果是重新安裝的話用 pm2 restart all)
 
 打開 localhost:3000 確認畫面正常
 
