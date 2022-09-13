@@ -157,8 +157,17 @@ export default function Contact() {
           </div>
         </div>
 
-        <div className={styles.title} style={{ marginTop: 33 + "px" }}>
+        <div
+          className={styles.title}
+          style={{
+            marginTop: 33 + "px",
+            display: "flex",
+            alignItems: "baseline",
+          }}
+        >
           <h3>請利用下方表單 與我們聯繫</h3>
+          &nbsp;
+          <span style={{ fontSize: "26px" }}>Contact</span>
         </div>
 
         <div className={`${styles.section} form-section`}>
@@ -171,24 +180,28 @@ export default function Contact() {
             <div style={{ marginRight: "5px" }}>
               <label htmlFor="company" className="must">
                 公司名稱
-              </label>{" "}
+                <span style={{ fontSize: "15px" }}> company</span>
+              </label>
               <input type="text" id="company" name="company" required />
             </div>
             <div style={{ marginLeft: "5px" }}>
               <label htmlFor="sender" className="must">
                 電子信箱
+                <span style={{ fontSize: "15px" }}> E-mail</span>
               </label>
               <input type="email" id="sender" name="sender" required />
             </div>
             <div style={{ width: "100%" }}>
               <label htmlFor="name" className="must">
                 聯絡人
+                <span style={{ fontSize: "15px" }}> Contact Person</span>
               </label>
               <input type="text" id="name" name="name" required />
             </div>
             <div style={{ width: "calc(30% - 5px)", marginRight: "5px" }}>
               <label htmlFor="number" className="must">
                 電話
+                <span style={{ fontSize: "15px" }}> Contact Number</span>
               </label>
               <input type="number" id="number" name="number" required />
             </div>
@@ -199,23 +212,29 @@ export default function Contact() {
                 marginRight: "5px",
               }}
             >
-              <label htmlFor="extensionNumber">分機</label>
+              <label htmlFor="extensionNumber">
+                分機 <span style={{ fontSize: "15px" }}> Extension Number</span>
+              </label>
               <input type="text" id="extensionNumber" name="extensionNumber" />
             </div>
             <div style={{ width: "calc(50% - 5px)", marginLeft: "5px" }}>
-              <label htmlFor="fax">傳真</label>
+              <label htmlFor="fax">
+                傳真 <span style={{ fontSize: "15px" }}> Fax</span>
+              </label>
               <input type="text" id="fax" name="fax" />
             </div>
             <div style={{ marginLeft: "0" }}>
               <label htmlFor="spec" className="must">
                 布規
+                <span style={{ fontSize: "15px" }}> Fabrics</span>
               </label>
               <input type="text" id="spec" name="spec" required />
             </div>
             <div style={{ width: "100%" }}>
               <label htmlFor="content" className="must">
                 內容
-              </label>{" "}
+                <span style={{ fontSize: "15px" }}> Processing</span>
+              </label>
               <textarea
                 id="content"
                 name="content"
@@ -243,8 +262,17 @@ export default function Contact() {
           </form>
         </div>
 
-        <div className={styles.title} style={{ marginTop: 33 + "px" }}>
+        <div
+          className={styles.title}
+          style={{
+            marginTop: 33 + "px",
+            display: "flex",
+            alignItems: "baseline",
+          }}
+        >
           <h3>交通地圖</h3>
+          &nbsp;
+          <span style={{ fontSize: "26px" }}>Map</span>
           <WhiteLogo r style={{ bottom: 0, right: 0 }}></WhiteLogo>
         </div>
 

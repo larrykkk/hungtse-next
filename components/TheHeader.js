@@ -63,13 +63,16 @@ export default function Header() {
       : `${styles.link}`;
   };
 
-  var toggleSubMenu = useCallback((name) => {
-    if (subMenuActiveName === name) {
-      setSubMenuActiveName("");
-    } else {
-      setSubMenuActiveName(name);
-    }
-  }, [subMenuActiveName]);
+  var toggleSubMenu = useCallback(
+    (name) => {
+      if (subMenuActiveName === name) {
+        setSubMenuActiveName("");
+      } else {
+        setSubMenuActiveName(name);
+      }
+    },
+    [subMenuActiveName]
+  );
 
   const Menu = () => (
     <div
@@ -175,17 +178,10 @@ export default function Header() {
             <a style={{ display: "inherit", alignItems: "inherit" }}>
               <Image
                 className={styles["m-logo"]}
-                src={basePath + "/image/竑澤單Logo-27.png"}
-                width={62}
-                height={34}
+                src={basePath + "/image/20220905 竑澤Logo_頁首黑.png"}
+                width={288}
+                height={50}
                 alt="logo"
-              />
-              <Image
-                className={styles["m-site-name"]}
-                src={basePath + "/image/竑澤 橫式文字-38.png"}
-                width={188}
-                height={20}
-                alt="竑澤實業股份有限公司"
               />
             </a>
           </Link>
@@ -219,35 +215,21 @@ export default function Header() {
           <div style={{ display: "flex", alignItems: "center" }}>
             <Link href="/">
               <a style={{ display: "inherit", alignItems: "inherit" }}>
-                <Image
-                  src={basePath + "/image/竑澤單Logo-27.png"}
-                  alt="logo"
-                  width={95}
-                  height={52}
-                />
-                <div
-                  style={{
-                    width: "225px",
-                    height: "24px",
-                    position: "relative",
-                    marginLeft: "10px",
-                  }}
-                  className={styles.siteName}
-                >
-                  {isSticky ? (
-                    <Image
-                      src={basePath + "/image/竑澤 橫式文字2-39.png"}
-                      alt="竑澤實業股份有限公司"
-                      layout="fill"
-                    />
-                  ) : (
-                    <Image
-                      src={basePath + "/image/竑澤 橫式文字-38.png"}
-                      alt="竑澤實業股份有限公司"
-                      layout="fill"
-                    />
-                  )}
-                </div>
+                {isSticky ? (
+                  <Image
+                    src={basePath + "/image/20220905 竑澤Logo_頁首白.png"}
+                    alt="logo"
+                    width={360}
+                    height={63}
+                  />
+                ) : (
+                  <Image
+                    src={basePath + "/image/20220905 竑澤Logo_頁首黑.png"}
+                    alt="logo"
+                    width={360}
+                    height={63}
+                  />
+                )}
               </a>
             </Link>
           </div>

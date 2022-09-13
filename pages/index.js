@@ -46,7 +46,7 @@ export default function Home() {
       name: "寢具-總覽",
     },
     {
-      title: "迷彩",
+      title: "國內外軍用及成衣用迷彩",
       en: "CAMOUFLAGE",
       name: "迷彩-總覽",
     },
@@ -139,7 +139,16 @@ export default function Home() {
           objectFit="cover"
           quality={100}
         />
-        <div className={styles.desc}>
+        <div
+          className={styles.desc}
+          style={{
+            fontStyle: "normal",
+            fontFamily: "'Noto Sans TC', sans-serif",
+            fontWeight: 700,
+            fontSize: "16px",
+            color: "#062959",
+          }}
+        >
           <h3>品質第一，堅持做到最好</h3>
           <h2 style={{ marginTop: "20px" }}>
             竑澤成立於 81 年10 月，為中華民國經濟部核准公司，並於84 年 <br />
@@ -150,8 +159,16 @@ export default function Home() {
       </div>
 
       <main>
-        <div className={styles.title} style={{ marginTop: 33 + "px" }}>
-          竑澤優勢
+        <div
+          className={styles.title}
+          style={{
+            marginTop: 33 + "px",
+            display: "flex",
+            alignItems: "baseline",
+          }}
+        >
+          竑澤優勢&nbsp;
+          <span style={{ fontSize: "26px" }}>Advantage</span>
         </div>
         <div className={styles.section}>
           <div className={`${styles.content} ${styles.advantage}`}>
@@ -208,7 +225,7 @@ export default function Home() {
                 />
               </div>
               <span>價格合理</span>
-              <span className={styles["en-text"]}>REASOVABLY PRICED</span>
+              <span className={styles["en-text"]}>REASONABLY PRICED</span>
             </div>
           </div>
           <Link href="/about">
@@ -216,7 +233,17 @@ export default function Home() {
           </Link>
         </div>
 
-        <div className={styles.title}>產品項目</div>
+        <div
+          className={styles.title}
+          style={{
+            marginTop: 33 + "px",
+            display: "flex",
+            alignItems: "baseline",
+          }}
+        >
+          產品項目&nbsp;
+          <span style={{ fontSize: "26px" }}>Products</span>
+        </div>
         <div className={`${styles.section}`}>
           {size.width > 767 ? (
             <>
@@ -337,8 +364,16 @@ export default function Home() {
           </div>
         </div>
 
-        <div className={styles.title}>
-          設備介紹
+        <div
+          className={styles.title}
+          style={{
+            marginTop: 33 + "px",
+            display: "flex",
+            alignItems: "baseline",
+          }}
+        >
+          設備介紹&nbsp;
+          <span style={{ fontSize: "26px" }}>Equipment</span>
           <WhiteLogo r style={{ bottom: 50, right: 0 }}></WhiteLogo>
         </div>
         <div className={styles.section}>

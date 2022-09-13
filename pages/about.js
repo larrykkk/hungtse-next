@@ -190,8 +190,16 @@ export default function About() {
       <WhiteLogo r style={{ bottom: 0, right: 0 }}></WhiteLogo>
 
       <main>
-        <div className={styles.title} style={{ marginTop: 33 + "px" }}>
-          <h3>竑澤沿革</h3>
+        <div
+          className={styles.title}
+          style={{
+            marginTop: 33 + "px",
+            display: "flex",
+            alignItems: "baseline",
+          }}
+        >
+          <h3>竑澤沿革</h3>&nbsp;
+          <span style={{ fontSize: "26px" }}>History</span>
         </div>
 
         <div className={`${styles.section} history`}>
@@ -203,12 +211,21 @@ export default function About() {
             ></Image>
           </div>
           <div className="timeline-text">
-          竑澤實業成立於民國81年10月，為中華民國經濟部核准公司，並於民國84年開始營運，至今已超過25年。我們擁有專業的一貫作業，堅持品質的良好，從胚布開始進行初步的處理、各式加工作業再到後整理，竑澤都層層把關，提供客戶最好的成品；除了專業技術，竑澤擁有靈活的機動性及溝通，給顧客最實在的；為滿足顧客需求，竑澤不斷新增服務的項目，成為最全面的印染廠。
+            竑澤實業成立於民國81年10月，為中華民國經濟部核准公司，並於民國84年開始營運，至今已超過25年。我們擁有專業的一貫作業，堅持品質的良好，從胚布開始進行初步的處理、各式加工作業再到後整理，竑澤都層層把關，提供客戶最好的成品；除了專業技術，竑澤擁有靈活的機動性及溝通，給顧客最實在的；為滿足顧客需求，竑澤不斷新增服務的項目，成為最全面的印染廠。
           </div>
         </div>
 
-        <div className={styles.title} style={{ marginTop: 33 + "px" }}>
+        <div
+          className={styles.title}
+          style={{
+            marginTop: 33 + "px",
+            display: "flex",
+            alignItems: "baseline",
+          }}
+        >
           <h3>污水處理法 再造綠能</h3>
+          &nbsp;
+          <span style={{ fontSize: "26px" }}>Sewage Disposal</span>
           <WhiteLogo l style={{ bottom: 30, left: 0 }}></WhiteLogo>
         </div>
 

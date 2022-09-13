@@ -60,6 +60,7 @@ export default function Products() {
     },
     {
       name: "迷彩",
+      trueName: "國內外軍用及成衣用迷彩", 
       en: "CAMOUFLAGE",
       otherImages: ["迷彩-75D.jpg", "迷彩-500D_N_.jpg", "迷彩-N_.jpg"],
     },
@@ -91,8 +92,16 @@ export default function Products() {
       <WhiteLogo l style={{ bottom: 0, left: 0 }}></WhiteLogo>
 
       <main>
-        <div className={styles.title} style={{ marginTop: 33 + "px" }}>
-          布種列表
+        <div
+          className={styles.title}
+          style={{
+            marginTop: 33 + "px",
+            display: "flex",
+            alignItems: "baseline",
+          }}
+        >
+          布種列表&nbsp;
+          <span style={{ fontSize: "26px" }}>Fabrics</span>
         </div>
         <div className={styles.section} style={{ position: "relative" }}>
           <Image
@@ -103,8 +112,16 @@ export default function Products() {
           />
         </div>
 
-        <div className={styles.title} style={{ marginTop: 33 + "px" }}>
-          布料用途
+        <div
+          className={styles.title}
+          style={{
+            marginTop: 33 + "px",
+            display: "flex",
+            alignItems: "baseline",
+          }}
+        >
+          布料用途 &nbsp;
+          <span style={{ fontSize: "26px" }}>Functions</span>
           <WhiteLogo r style={{ bottom: 50, right: 0 }}></WhiteLogo>
         </div>
         <div className={`${styles.section}`}>
@@ -177,7 +194,7 @@ export default function Products() {
                   return (
                     <div key={index} id={item.name}>
                       <div className="product-type-name">
-                        {item.name} {item.en}
+                        {item.trueName || item.name} {item.en}
                       </div>
                       <div className="product-type-Thumbnail">
                         <div className="product-type-Thumbnail-main">
@@ -220,7 +237,7 @@ export default function Products() {
                   return (
                     <div key={index} id={item.name}>
                       <div className="product-type-name">
-                        {item.name} {item.en}
+                        {item.trueName || item.name} {item.en}
                       </div>
                       <div className="product-type-Thumbnail ">
                         <div

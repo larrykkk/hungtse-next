@@ -103,7 +103,7 @@ export default function Factory() {
             反應性染料 Reactive Dye
             分散性染料 Disperse Dye
             酸性染料 Acid Dye
-            反光印花 Reflective Fabrics
+            反光印花 Reflective Printing
             夜光印花 Luminous Printing
             感溫變色 Chameleon Paint
             雷射七彩印花 Laser Colorful
@@ -115,10 +115,10 @@ export default function Factory() {
             撥水 Water-Repellent Finishing
             防火 Flame Retardant Finishing
             樹酯加工 Resin Finishing
-            柔軟 Mild finishing
+            柔軟 Mild Finishing
             吸濕排汗 Wicking Finishing
             防蟎抗菌 Anti-mite and Anti-bacterial Fabric Finishing
-            燒花 Burnt-out
+            燒花 Burnt-out Fabrics
             壓光 Calendering
             防縮 Sanforizing
           "
@@ -146,8 +146,16 @@ export default function Factory() {
       <WhiteLogo r style={{ bottom: 0, right: 0 }}></WhiteLogo>
 
       <main>
-        <div className={styles.title} style={{ marginTop: 33 + "px" }}>
-          <h3>服務項目</h3>
+        <div
+          className={styles.title}
+          style={{
+            marginTop: 33 + "px",
+            display: "flex",
+            alignItems: "baseline",
+          }}
+        >
+          <h3>服務項目</h3>&nbsp;
+          <span style={{ fontSize: "26px" }}>Service</span>
         </div>
 
         <div className={`${styles.section} services`}>
@@ -232,7 +240,7 @@ export default function Factory() {
                     </tr>
                     <tr>
                       <td>反光印花</td>
-                      <td>Reflective Fabrics</td>
+                      <td>Reflective Printing</td>
                     </tr>
                     <tr>
                       <td>夜光印花</td>
@@ -320,7 +328,7 @@ export default function Factory() {
                     </tr>
                     <tr>
                       <td>柔軟</td>
-                      <td>Mild finishing</td>
+                      <td>Mild Finishing</td>
                     </tr>
                     <tr>
                       <td>吸濕排汗</td>
@@ -332,7 +340,7 @@ export default function Factory() {
                     </tr>
                     <tr>
                       <td>燒花</td>
-                      <td>Burnt-out</td>
+                      <td>Burnt-out Fabrics</td>
                     </tr>
                   </table>
                 </Popover.Body>
@@ -408,8 +416,16 @@ export default function Factory() {
             </div>
           </OverlayTrigger>
         </div>
-        <div className={styles.title} style={{ marginTop: 33 + "px" }}>
-          <h3>設備介紹</h3>
+        <div
+          className={styles.title}
+          style={{
+            marginTop: 33 + "px",
+            display: "flex",
+            alignItems: "baseline",
+          }}
+        >
+          <h3>設備介紹</h3>&nbsp;
+          <span style={{ fontSize: "26px" }}>Equipment</span>
           <WhiteLogo l style={{ bottom: 80, left: 0 }}></WhiteLogo>
         </div>
 
@@ -456,7 +472,7 @@ export default function Factory() {
 
                 <div className="text">
                   <h3>{item.name}</h3>
-                  <div className={'en-text'}>{item.en}</div>
+                  <div className={"en-text"}>{item.en}</div>
                   <div className="desc">{item.description}</div>
                 </div>
 
