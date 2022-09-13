@@ -56,7 +56,7 @@ export default function Products() {
         "寢具-110_52TC.jpg",
         "寢具-110_52TC(1).jpg",
         "寢具-110x76TC.jpg",
-      ],
+      ]
     },
     {
       name: "迷彩",
