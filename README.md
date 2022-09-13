@@ -1,6 +1,6 @@
-# 竑澤實業股份有限公司 形象官網
+# 竑澤實業股份有限公司 形象網站
 
-使用 Nextjs / Gitbhu Actions 打造的形象官網  
+使用 Nextjs / Gitbhu Actions 打造的形象網站  
 網頁內容包含 輪播 / 圖片庫燈箱 / Email 聯絡表單
 
 ![image](https://user-images.githubusercontent.com/25131952/181602885-d64903f7-b80f-4cc9-9e8e-36d7d988d033.png)
@@ -69,7 +69,7 @@ npm i
 
 npm run build
 
-pm2 start
+pm2 start (如果是重新安裝的話用 pm2 restart all)
 
 打開 localhost:3000 確認畫面正常
 
