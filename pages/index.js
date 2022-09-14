@@ -46,11 +46,19 @@ export default function Home() {
       name: "寢具-總覽",
     },
     {
-      title: "國內外軍用及成衣用迷彩",
+      title: "國內外軍用\n及成衣用迷彩",
       en: "CAMOUFLAGE",
       name: "迷彩-總覽",
     },
   ]);
+
+  function createMarkup(html) {
+    return { __html: html };
+  }
+
+  function MyComponent(html) {
+    return <div dangerouslySetInnerHTML={createMarkup(html)} />;
+  }
 
   const [equipment, setEquipment] = useState([
     {
@@ -133,7 +141,7 @@ export default function Home() {
         // }}
       >
         <Image
-          src={basePath + "/image/comp3/1 首頁.png"}
+          src={basePath + "/image/1 首頁_漸層.png"}
           alt="banner"
           layout="fill"
           objectFit="cover"
@@ -294,8 +302,11 @@ export default function Home() {
                           layout="fill"
                         />
                       </div>
-                      <div className={`${styles.swiperDesc} swiper-no-swiping`}>
-                        {item.title}
+                      <div
+                        className={`${styles.swiperDesc} swiper-no-swiping`}
+                        style={{ whiteSpace: "pre-line" }}
+                      >
+                        {MyComponent(item.title)}
                       </div>
                       <span
                         className={`${styles["en-text"]} swiper-no-swiping`}
@@ -342,8 +353,9 @@ export default function Home() {
                     </div>
                     <span
                       className={`${styles["mobile-products-desc"]} swiper-no-swiping`}
+                      style={{ whiteSpace: "pre-line" }}
                     >
-                      {item.title}
+                      {MyComponent(item.title)}
                     </span>
                     <div
                       className={`${styles["en-text"]} swiper-no-swiping`}
@@ -425,7 +437,7 @@ export default function Home() {
                         />
                       </div>
                       <div className={`${styles.swiperDesc} swiper-no-swiping`}>
-                        {item.name}
+                        {MyComponent(item.name)}
                       </div>
                       <div
                         className={`${styles["en-text"]} swiper-no-swiping`}
@@ -471,7 +483,7 @@ export default function Home() {
                       />
                     </div>
                     <span className={styles["mobile-equipment-desc"]}>
-                      {item.name}
+                      {MyComponent(item.name)}
                     </span>
                     <div
                       className={`${styles["en-text"]}`}

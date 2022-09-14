@@ -180,7 +180,7 @@ export default function Contact() {
             <div style={{ marginRight: "5px" }}>
               <label htmlFor="company" className="must">
                 公司名稱
-                <span style={{ fontSize: "15px" }}> company</span>
+                <span style={{ fontSize: "15px" }}> Company</span>
               </label>
               <input type="text" id="company" name="company" required />
             </div>
