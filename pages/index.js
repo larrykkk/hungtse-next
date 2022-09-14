@@ -141,7 +141,7 @@ export default function Home() {
         // }}
       >
         <Image
-          src={basePath + "/image/1 首頁_漸層.png"}
+          src={basePath + "/image/S__9805826.jpg"}
           alt="banner"
           layout="fill"
           objectFit="cover"
